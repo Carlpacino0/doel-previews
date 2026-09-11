@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beng Beauty Studio | Tırnak Sanatçısı</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f6efe6; --surface: #fff; --ink: #241a17; --muted: #97816d; --accent: #b3562f; --plum: #43242e; --border: #e9dcc9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+    h1, h2, .disp { font-family: Sora, Inter, sans-serif; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    header.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(67,36,46,.8); backdrop-filter: blur(14px); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+    .brand { color: #fff; font-weight: 700; } .brand small { display: block; font-size: 10.5px; letter-spacing: 2.5px; color: #e8b48a; text-transform: uppercase; font-weight: 400; }
+    .btn { display: inline-block; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 14px; }
+    .btn-hot { background: var(--accent); color: #fff; } .btn-ghostw { border: 1.5px solid rgba(255,255,255,.6); color: #fff; }
+    .btn-ghostd { border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn-sm { padding: 10px 22px; font-size: 13.5px; }
+    .hero { background: var(--plum); color: #fff; padding: 150px 0 0; overflow: hidden; }
+    .hero .grid2 { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; }
+    .eyebrow { display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 7px 16px; border-radius: 999px; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(38px, 5.5vw, 66px); line-height: 1.06; margin: 0 0 12px; font-weight: 800; }
+    .hero .loc { opacity: .8; margin-bottom: 20px; }
+    .stats { display: flex; gap: 26px; margin: 4px 0 28px; } .stats b { display: block; font-size: 26px; } .stats span { font-size: 12.5px; opacity: .7; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero img.main { width: 100%; height: 480px; object-fit: cover; border-radius: 22px 22px 0 0; display: block; }
+    section { padding: 70px 0 10px; }
+    h2.sec { font-size: clamp(30px, 4vw, 46px); margin: 0 0 8px; letter-spacing: -1px; }
+    p.sub { color: var(--muted); margin: 0 0 32px; font-size: 17px; }
+    .num-list { display: flex; flex-direction: column; gap: 14px; }
+    .num-card { display: grid; grid-template-columns: 90px 150px 1fr auto; gap: 20px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 14px 22px 14px 14px; }
+    .num-card .n { font-family: Sora, sans-serif; font-weight: 800; font-size: 40px; color: var(--accent); opacity: .9; text-align: center; }
+    .num-card img { width: 150px; height: 110px; object-fit: cover; border-radius: 12px; }
+    .num-card .meta { display: flex; gap: 8px; margin-bottom: 4px; font-size: 11px; align-items: center; }
+    .num-card .badge { background: #ffeae1; color: var(--accent); padding: 2px 7px; border-radius: 5px; font-weight: 700; text-transform: uppercase; }
+    .num-card .dur { color: var(--muted); }
+    .num-card h3 { margin: 0 0 4px; font-size: 20px; } .num-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+    .num-card a { font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+    .split img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; border-radius: 20px; }
+    .split .txt { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 34px; font-size: 17.5px; }
+    .gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
+    .gallery img { width: 100%; height: 240px; object-fit: cover; border-radius: 16px; }
+    .booking { background: #1f1512; color: #f6efe6; border-radius: 24px; padding: 50px 38px; margin: 70px 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .booking h2 { margin: 0 0 10px; font-size: clamp(28px, 3.5vw, 40px); letter-spacing: -1px; }
+    .booking form { display: flex; flex-direction: column; gap: 12px; }
+    .booking input, .booking select { padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.07); color: #fff; font-size: 15px; font-family: inherit; }
+    .booking input::placeholder { color: rgba(255,255,255,.6); } .booking select option { color: #222; }
+    .booking button { background: var(--accent); color: #fff; border: none; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 20px 46px; }
+    @media (max-width: 860px) { .hero .grid2, .split, .booking { grid-template-columns: 1fr; } .num-card { grid-template-columns: 60px 1fr; } .num-card img, .num-card a { display: none; } .gallery { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div class="brand">Beng Beauty Studio<small>Tırnak Sanatçısı</small></div>
+    <a class="btn btn-ghostw btn-sm" href="https://www.instagram.com/bengnailbeauty/">Instagram</a>
+  </div></header>
+  <div class="hero"><div class="wrap"><div class="grid2">
+    <div>
+      <span class="eyebrow">Tırnak Sanatçısı </span>
+      <h1>Beng Beauty <em>Studio</em></h1>
+      <div class="loc"></div>
+      <div class="stats"><div><b>187</b><span>paylaşım</span></div><div><b>0</b><span>takipçi</span></div><div><b>6</b><span>hizmet</span></div></div>
+      <div class="cta-row"><a class="btn btn-ghostw" href="https://www.instagram.com/bengnailbeauty/">Instagram Profili</a></div>
+    </div>
+    <div><img class="main" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Beng Beauty Studio"></div>
+  </div></div></div>
+  <div class="wrap">
+    <section><h2 class="sec">Hizmetlerimiz</h2><p class="sub">6 farklı hizmet — size uygun olanı seçin.</p><div class="num-list"><div class="num-card"><div class="n">01</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:center" alt="11 B Takipçi" loading="lazy"><div><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>11 B Takipçi</h3><p>11 B Takipçi alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p></div><a href="https://www.instagram.com/bengnailbeauty/" target="_blank">Randevu Al →</a></div><div class="num-card"><div class="n">02</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:top" alt="Signature Touch Of Timeless Beau" loading="lazy"><div><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Signature Touch Of Timeless Beau</h3><p>Signature Touch Of Timeless Beau alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p></div><a href="https://www.instagram.com/bengnailbeauty/" target="_blank">Randevu Al →</a></div><div class="num-card"><div class="n">03</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:bottom" alt="Based In Bursa" loading="lazy"><div><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Based In Bursa</h3><p>Based In Bursa alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p></div><a href="https://www.instagram.com/bengnailbeauty/" target="_blank">Randevu Al →</a></div><div class="num-card"><div class="n">04</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:left center" alt="Atış Yapı Westpoint, Bursa" loading="lazy"><div><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Atış Yapı Westpoint, Bursa</h3><p>Atış Yapı Westpoint, Bursa alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p></div><a href="https://www.instagram.com/bengnailbeauty/" target="_blank">Randevu Al →</a></div><div class="num-card"><div class="n">05</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:right center" alt="Bengnailbeauty" loading="lazy"><div><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Bengnailbeauty</h3><p>Bengnailbeauty alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p></div><a href="https://www.instagram.com/bengnailbeauty/" target="_blank">Randevu Al →</a></div><div class="num-card"><div class="n">06</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:center" alt="Memnuniyet" loading="lazy"><div><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Memnuniyet</h3><p>Memnuniyet alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p></div><a href="https://www.instagram.com/bengnailbeauty/" target="_blank">Randevu Al →</a></div></div></section>
+    <section><h2 class="sec">Bizi tanıyın</h2><div class="split" style="margin-top:26px"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Beng Beauty Studio"><div class="txt">Beng Beauty Studio — 11 B takipçi, Signature touch of timeless beauty, Based in Bursa, Atış Yapı Westpoint, Bursa, bengnailbeauty, Memnuniyet alanlarında hizmet veriyor.</div></div></section>
+    <section><h2 class="sec">Galeri</h2><p class="sub">Devamı Instagram profilimizde.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"></div></section>
+    <div class="booking"><div><h2>Hemen randevu alın</h2><p>Hizmetler ve müsaitlik için hemen yazın — aynı gün dönüş yapıyoruz.</p><div></div></div>
+      <form onsubmit="return sendBooking(event)"><input id="bk-name" placeholder="Adınız Soyadınız" required><input id="bk-phone" placeholder="Telefonunuz (05__ ___ __ __)" required><select id="bk-service"><option>11 B takipçi</option><option>Signature touch of timeless beauty</option><option>Based in Bursa</option><option>Atış Yapı Westpoint, Bursa</option><option>bengnailbeauty</option><option>Memnuniyet</option></select><button type="submit">Randevu Talebi Gönder</button></form>
+    </div>
+  </div>
+  <footer>Beng Beauty Studio · Tırnak Sanatçısı<br>Bu sayfa DOEL DIGITAL tarafından hazırlanan ücretsiz önizlemedir.</footer>
+  <script>const WA_PHONE="";const IG_URL="https://www.instagram.com/bengnailbeauty/";function sendBooking(e){e.preventDefault();const n=document.getElementById('bk-name').value.trim();const p=document.getElementById('bk-phone').value.trim();const s=document.getElementById('bk-service').value;const msg=encodeURIComponent(`Merhaba, ben ${n} (${p}). ${s} için randevu almak istiyorum.`);if(WA_PHONE){window.open(`https://wa.me/${WA_PHONE}?text=${msg}`,'_blank');}else{window.open(IG_URL,'_blank');}return false;}</script>
+</body>
+</html>

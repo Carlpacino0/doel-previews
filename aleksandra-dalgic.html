@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleksandra Dalgıc | Alexandra | Güzellik salonu işletme sahibi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #fbf9f5; --surface: #fff; --ink: #33302c; --muted: #a09487; --accent: #7d8b6f; --accent-dk: #55624a; --border: #e8e0d3; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Jost, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-weight: 300; }
+    h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; }
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+    header.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(251,249,245,.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 15px; padding-bottom: 15px; }
+    .brand { font-size: 19px; letter-spacing: 1px; } .brand small { display: block; font-size: 10px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; font-family: Jost, sans-serif; }
+    .btn { display: inline-block; text-decoration: none; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 34px; border-radius: 999px; font-weight: 500; }
+    .btn-solid { background: var(--accent-dk); color: #fff; } .btn-line { border: 1px solid var(--accent-dk); color: var(--accent-dk); }
+    .btn-sm { padding: 10px 24px; font-size: 12px; }
+    .hero { text-align: center; padding: 150px 24px 30px; }
+    .eyebrow { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); }
+    .hero h1 { font-size: clamp(44px, 7vw, 84px); margin: 14px 0 8px; line-height: 1.05; }
+    .hero h1 em { color: var(--accent); }
+    .hero .loc { color: var(--muted); font-size: 17px; }
+    .arch { width: min(420px, 80vw); height: 540px; object-fit: cover; border-radius: 999px 999px 24px 24px; margin: 34px auto 10px; display: block; box-shadow: 0 30px 60px rgba(85,98,74,.18); }
+    .stats { display: flex; gap: 34px; justify-content: center; margin: 26px 0; }
+    .stats b { display: block; font-size: 24px; font-weight: 500; } .stats span { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    section { padding: 70px 0 10px; text-align: center; }
+    h2.sec { font-size: clamp(32px, 4.5vw, 52px); margin: 10px 0 8px; }
+    h2.sec em { color: var(--accent); }
+    p.sub { color: var(--muted); margin: 0 auto 38px; max-width: 520px; font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 26px; text-align: left; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card .body { padding: 22px 22px 24px; }
+    .card .meta { display: flex; gap: 10px; margin-bottom: 8px; font-size: 11.5px; align-items: center; }
+    .card .badge { background: rgba(125,139,111,.18); color: var(--accent-dk); padding: 3px 8px; border-radius: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .card .dur { color: var(--muted); }
+    .card h3 { margin: 0 0 6px; font-size: 24px; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+    .card a { color: var(--accent-dk); font-weight: 500; text-decoration: none; letter-spacing: 1px; font-size: 13.5px; text-transform: uppercase; }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; text-align: left; align-items: stretch; }
+    .about img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; border-radius: 22px; }
+    .about .txt { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 36px; font-size: 18px; }
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .gallery img { width: 100%; height: 220px; object-fit: cover; }
+    .gallery img:nth-child(odd) { border-radius: 999px 999px 18px 18px; } .gallery img:nth-child(even) { border-radius: 18px; }
+    .booking { background: var(--accent-dk); color: #f2efe7; border-radius: 28px; padding: 54px 40px; margin: 80px 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; text-align: left; }
+    .booking h2 { margin: 0 0 10px; font-size: clamp(28px, 3.5vw, 42px); }
+    .booking form { display: flex; flex-direction: column; gap: 12px; }
+    .booking input, .booking select { padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.1); color: #fff; font-size: 15px; font-family: inherit; }
+    .booking input::placeholder { color: rgba(255,255,255,.65); } .booking select option { color: #222; }
+    .booking button { background: #fff; color: var(--accent-dk); border: none; padding: 15px; border-radius: 14px; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; cursor: pointer; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 34px 20px 48px; }
+    @media (max-width: 820px) { .about, .booking { grid-template-columns: 1fr; } .gallery { grid-template-columns: repeat(2, 1fr); } .arch { height: 420px; } }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div class="brand">Aleksandra Dalgıc<small>Alexandra | Güzellik salonu işletme sahibi</small></div>
+    <a class="btn btn-line btn-sm" href="https://www.instagram.com/aleksandragauzin/">Instagram</a>
+  </div></header>
+  <div class="hero">
+    <span class="eyebrow">Alexandra | Güzellik salonu işletme sahibi </span>
+    <h1>Aleksandra <em>Dalgıc</em></h1>
+    <div class="loc">Mersin</div>
+    <img class="arch" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Aleksandra Dalgıc">
+    <div class="stats"><div><b>2.461</b><span>paylaşım</span></div><div><b>0</b><span>takipçi</span></div><div><b>4</b><span>hizmet</span></div></div>
+    <div class="cta-row"><a class="btn btn-line" href="https://www.instagram.com/aleksandragauzin/">Instagram Profili</a></div>
+  </div>
+  <div class="wrap">
+    <section><span class="eyebrow">Hizmetler</span><h2 class="sec">Bakım <em>ritüelleriniz</em></h2><p class="sub">4 farklı hizmet — size uygun olanı seçin.</p><div class="grid"><div class="card"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:center" alt="73,9 B Takipçi" loading="lazy"><div class="body"><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>73,9 B Takipçi</h3><p>73,9 B Takipçi alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p><a href="https://www.instagram.com/aleksandragauzin/" target="_blank">Randevu Talebi →</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:top" alt="İşlem Sonuçları:" loading="lazy"><div class="body"><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>İşlem Sonuçları:</h3><p>İşlem Sonuçları: alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p><a href="https://www.instagram.com/aleksandragauzin/" target="_blank">Randevu Talebi →</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:bottom" alt="Maps.App.Goo.Gl" loading="lazy"><div class="body"><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Maps.App.Goo.Gl</h3><p>Maps.App.Goo.Gl alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p><a href="https://www.instagram.com/aleksandragauzin/" target="_blank">Randevu Talebi →</a></div></div><div class="card"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" style="object-position:left center" alt="Aleksandragauzin" loading="lazy"><div class="body"><div class="meta"><span class="badge">Kişiye Özel</span><span class="dur">Randevu ile</span></div><h3>Aleksandragauzin</h3><p>Aleksandragauzin alanında kişiye özel analiz, steril uygulama ve yüksek kaliteli ürün garantisi.</p><a href="https://www.instagram.com/aleksandragauzin/" target="_blank">Randevu Talebi →</a></div></div></div></section>
+    <section><span class="eyebrow">Hakkımızda</span><h2 class="sec">Atölyemizden <em>kareler</em></h2><div class="about" style="margin-top:28px"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Aleksandra Dalgıc"><div class="txt">Aleksandra Dalgıc — 73,9 B takipçi, İşlem sonuçları:, maps.app.goo.gl, aleksandragauzin alanlarında hizmet veriyor.</div></div></section>
+    <section><span class="eyebrow">Galeri</span><h2 class="sec">İşlerimizden <em>kareler</em></h2><p class="sub">Devamı Instagram profilimizde.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"></div></section>
+    <div class="booking"><div><h2>Randevunuzu oluşturun</h2><p>Hizmetler ve müsaitlik için hemen yazın — aynı gün dönüş yapıyoruz.</p><div>Mersin</div></div>
+      <form onsubmit="return sendBooking(event)"><input id="bk-name" placeholder="Adınız Soyadınız" required><input id="bk-phone" placeholder="Telefonunuz (05__ ___ __ __)" required><select id="bk-service"><option>73,9 B takipçi</option><option>İşlem sonuçları:</option><option>maps.app.goo.gl</option><option>aleksandragauzin</option></select><button type="submit">Randevu Talebi Gönder</button></form>
+    </div>
+  </div>
+  <footer>Aleksandra Dalgıc · Alexandra | Güzellik salonu işletme sahibi<br>Bu sayfa DOEL DIGITAL tarafından hazırlanan ücretsiz önizlemedir.</footer>
+  <script>const WA_PHONE="";const IG_URL="https://www.instagram.com/aleksandragauzin/";function sendBooking(e){e.preventDefault();const n=document.getElementById('bk-name').value.trim();const p=document.getElementById('bk-phone').value.trim();const s=document.getElementById('bk-service').value;const msg=encodeURIComponent(`Merhaba, ben ${n} (${p}). ${s} için randevu almak istiyorum.`);if(WA_PHONE){window.open(`https://wa.me/${WA_PHONE}?text=${msg}`,'_blank');}else{window.open(IG_URL,'_blank');}return false;}</script>
+</body>
+</html>

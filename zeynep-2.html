@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeynep | Güzellik Salonu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #141114; --surface: #1e1a1e; --ink: #f5efe8; --muted: #b9a89c; --accent: #d3a75f; --line: #332b32; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+    h1, h2, h3, .serif { font-family: "Playfair Display", Georgia, serif; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    header.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(20,17,20,.7); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+    .brand { font-weight: 600; font-size: 17px; letter-spacing: .4px; }
+    .brand small { display: block; font-size: 10.5px; letter-spacing: 2.5px; color: var(--accent); text-transform: uppercase; }
+    .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 28px; border-radius: 999px; }
+    .btn-gold { background: linear-gradient(135deg, #e0b96f, #b3813c); color: #1a1214; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,.4); color: #fff; }
+    .btn-sm { padding: 9px 20px; font-size: 13.5px; }
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 100vh; align-items: stretch; padding-top: 60px; }
+    .hero .txt { display: flex; flex-direction: column; justify-content: center; padding: 60px 40px 60px 0; }
+    .eyebrow { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(42px, 6vw, 74px); line-height: 1.04; margin: 0 0 14px; }
+    .hero h1 em { color: var(--accent); }
+    .hero .loc { color: var(--muted); margin-bottom: 22px; }
+    .stats { display: flex; gap: 28px; margin: 6px 0 30px; }
+    .stats b { display: block; font-size: 24px; } .stats span { font-size: 12.5px; color: var(--muted); }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero .ph { position: relative; min-height: 420px; }
+    .hero .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 0%, transparent 30%); }
+    section { padding: 80px 0 10px; }
+    .kicker { color: var(--accent); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+    h2.sec { font-size: clamp(30px, 4vw, 46px); margin: 8px 0 10px; }
+    p.sub { color: var(--muted); margin: 0 0 36px; font-size: 17px; max-width: 560px; }
+    .svc { display: flex; gap: 22px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-bottom: 16px; }
+    .svc img { width: 150px; height: 150px; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
+    .svc h3 { margin: 0 0 6px; font-size: 22px; } .svc p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+    .svc a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14.5px; }
+    .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; align-items: center; }
+    .about img { width: 100%; height: 420px; object-fit: cover; border-radius: 20px; }
+    .about .txt { font-size: 18px; color: var(--ink); }
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .gallery img { width: 100%; height: 230px; object-fit: cover; border-radius: 14px; }
+    .gallery img:first-child { grid-row: span 2; height: 472px; }
+    .booking { background: linear-gradient(135deg, #e0b96f, #b3813c); color: #1a1214; border-radius: 24px; padding: 52px 40px; margin: 80px 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .booking h2 { margin: 0 0 10px; font-size: clamp(28px, 3.5vw, 40px); }
+    .booking form { display: flex; flex-direction: column; gap: 12px; }
+    .booking input, .booking select { padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(0,0,0,.2); background: rgba(255,255,255,.85); font-size: 15px; font-family: inherit; }
+    .booking button { background: #1a1214; color: #fff; border: none; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 34px 20px 48px; }
+    @media (max-width: 820px) { .hero, .about, .booking { grid-template-columns: 1fr; } .hero .ph { min-height: 320px; order: -1; } .gallery { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div class="brand">Zeynep<small>Güzellik Salonu</small></div>
+    <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/zeyneppkendirr/">Instagram</a>
+  </div></header>
+  <div class="hero">
+    <div class="txt" style="padding-left: max(24px, calc((100vw - 1120px)/2));">
+      <span class="eyebrow">Güzellik Salonu </span>
+      <h1>Zeynep</h1>
+      <div class="loc"></div>
+      <div class="stats"><div><b>17</b><span>paylaşım</span></div><div><b>1.648</b><span>takipçi</span></div><div><b>0</b><span>hizmet</span></div></div>
+      <div class="cta-row"><a class="btn btn-ghost" href="https://www.instagram.com/zeyneppkendirr/">Instagram Profili</a></div>
+    </div>
+    <div class="ph"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Zeynep"></div>
+  </div>
+  <div class="wrap">
+    <section><span class="kicker">Hizmetler</span><h2 class="sec">Ne yapıyoruz</h2><p class="sub">Hizmet detayları için bize ulaşın.</p><div class="svc"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Salon" loading="lazy"><div><h3>Randevu ile Çalışıyoruz</h3><p>Müsaitlik için yazın.</p></div></div></section>
+    <section><span class="kicker">Hakkımızda</span><h2 class="sec">Salonumuzdan</h2><div class="about" style="margin-top:26px"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Zeynep"><div class="txt">Zeynep — Instagram üzerinden hizmet veren işletme (profil gizli).</div></div></section>
+    <section><span class="kicker">Galeri</span><h2 class="sec">İşlerimizden kareler</h2><p class="sub">Daha fazlası Instagram profilimizde.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"></div></section>
+    <div class="booking"><div><h2>Randevu Alın</h2><p>Hizmetler ve müsaitlik için hemen yazın — aynı gün dönüş yapıyoruz.</p><div></div></div>
+      <form onsubmit="return sendBooking(event)"><input id="bk-name" placeholder="Adınız Soyadınız" required><input id="bk-phone" placeholder="Telefonunuz (05__ ___ __ __)" required><select id="bk-service"><option>Genel randevu</option></select><button type="submit">Randevu Talebi Gönder</button></form>
+    </div>
+  </div>
+  <footer>Zeynep · Güzellik Salonu<br>Bu sayfa DOEL DIGITAL tarafından hazırlanan ücretsiz önizlemedir.</footer>
+  <script>const WA_PHONE="";const IG_URL="https://www.instagram.com/zeyneppkendirr/";function sendBooking(e){e.preventDefault();const n=document.getElementById('bk-name').value.trim();const p=document.getElementById('bk-phone').value.trim();const s=document.getElementById('bk-service').value;const msg=encodeURIComponent(`Merhaba, ben ${n} (${p}). ${s} için randevu almak istiyorum.`);if(WA_PHONE){window.open(`https://wa.me/${WA_PHONE}?text=${msg}`,'_blank');}else{window.open(IG_URL,'_blank');}return false;}</script>
+</body>
+</html>
