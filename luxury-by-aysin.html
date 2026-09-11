@@ -3,31 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>luxury by Ayşin — Güzellik & İleri Düzey Estetik | Bursa FSM Bulvarı</title>
-  <meta name="description" content="luxury by Ayşin: Bursa FSM Bulvarı'nda kişiye özel epilasyon protokolü, G5 masajı ve bölgesel incelme çözümleri. Lüks ve konforlu estetik deneyimi.">
+  <title>luxury by Ayşin — Bursa FSM Bulvarı Güzellik & Bakım Protokolleri</title>
+  <meta name="description" content="luxury by Ayşin — Bursa FSM Bulvarı'nda kişiye özel epilasyon protokolü, G5 bölgesel incelme ve klinik hijyen standardı.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,800;0,900;1,900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-base: #0B0A09;
-      --bg-surface: #141311;
-      --bg-card: #191715;
-      --bg-card-hover: #22201C;
-      --gold-main: #CDB087;
-      --gold-light: #E7D5BE;
-      --gold-dark: #8C7350;
-      --text-white: #FAF7F2;
-      --text-dim: #9C9589;
-      --text-muted: #6E685E;
-      --border-line: rgba(205, 176, 135, 0.18);
-      --border-highlight: rgba(205, 176, 135, 0.45);
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --radius-sm: 4px;
-      --radius-md: 10px;
-      --radius-lg: 18px;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --bg-light: #EFECE6;
+      --bg-dark: #161616;
+      --text-dark: #161616;
+      --text-light: #EFECE6;
+      --cobalt: #1A44ED;
+      --peach: #FF6F59;
+      --border-dark: rgba(22, 22, 22, 0.15);
+      --border-light: rgba(239, 236, 230, 0.18);
+      --font-headline: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --pad-x: clamp(1.25rem, 5vw, 4rem);
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after {
@@ -38,18 +34,17 @@
 
     html {
       scroll-behavior: smooth;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      background-color: var(--bg-base);
-      color: var(--text-white);
-      font-family: var(--font-sans);
     }
 
     body {
       overflow-x: hidden;
-      line-height: 1.6;
-      background: radial-gradient(circle at 85% 10%, rgba(205, 176, 135, 0.07) 0%, transparent 45%),
-                  radial-gradient(circle at 10% 60%, rgba(205, 176, 135, 0.04) 0%, transparent 50%),
-                  var(--bg-base);
+      background-color: var(--bg-light);
     }
 
     img {
@@ -62,1005 +57,998 @@
     a {
       color: inherit;
       text-decoration: none;
-      transition: var(--transition);
     }
 
     button, input, select, textarea {
       font-family: inherit;
-      color: inherit;
       border: none;
       outline: none;
       background: none;
     }
 
-    .container {
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 24px;
+    /* TYPOGRAPHY HELPERS */
+    .headline-huge {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+    }
+
+    .editorial-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
 
     /* HEADER */
     .site-header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 99;
-      background: rgba(11, 10, 9, 0.82);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-line);
-      transition: var(--transition);
-    }
-
-    .header-inner {
+      z-index: 100;
+      background-color: var(--bg-light);
+      border-bottom: 2px solid var(--text-dark);
+      padding: 1.1rem var(--pad-x);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 86px;
-    }
-
-    .brand-logo {
-      display: flex;
-      flex-direction: column;
+      gap: 1rem;
     }
 
     .brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      letter-spacing: 0.18em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--text-white);
-      line-height: 1.1;
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      letter-spacing: -0.03em;
+      text-transform: lowercase;
+      white-space: nowrap;
     }
 
-    .brand-subtitle {
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold-main);
-      font-weight: 500;
-      margin-top: 3px;
+    .brand-title span {
+      font-weight: 400;
+      font-style: italic;
+      color: var(--cobalt);
     }
 
-    .header-center-pill {
+    .header-center {
       display: none;
       align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      color: var(--text-dim);
-      padding: 6px 14px;
-      border: 1px solid var(--border-line);
-      border-radius: 999px;
-      background: rgba(20, 19, 17, 0.6);
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    .location-dot {
-      width: 6px;
-      height: 6px;
-      background-color: var(--gold-main);
+    @media (min-width: 860px) {
+      .header-center {
+        display: flex;
+      }
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--gold-main);
+      background-color: var(--peach);
+      box-shadow: 0 0 0 3px rgba(255, 111, 89, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
     }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 0.75rem;
     }
 
-    .ig-header-btn {
+    .btn-compact {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.65rem 1.25rem;
+      border: 2px solid var(--text-dark);
+      background: transparent;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, rgba(205, 176, 135, 0.15) 0%, rgba(205, 176, 135, 0.05) 100%);
-      border: 1px solid var(--border-line);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--gold-light);
-      position: relative;
-      overflow: hidden;
+      gap: 0.4rem;
     }
 
-    .ig-header-btn:hover {
-      border-color: var(--gold-main);
-      box-shadow: 0 0 15px rgba(205, 176, 135, 0.2);
-      transform: translateY(-1px);
+    .btn-compact:hover {
+      background-color: var(--text-dark);
+      color: var(--bg-light);
     }
 
-    .ig-count {
-      opacity: 0.75;
-      font-size: 0.7rem;
-      padding-left: 6px;
-      border-left: 1px solid rgba(205, 176, 135, 0.25);
+    .btn-cobalt {
+      background-color: var(--cobalt);
+      border-color: var(--cobalt);
+      color: #fff;
+    }
+
+    .btn-cobalt:hover {
+      background-color: var(--text-dark);
+      border-color: var(--text-dark);
+      color: #fff;
     }
 
     /* HERO SECTION */
-    .hero {
-      padding-top: 130px;
-      padding-bottom: 70px;
+    .hero-section {
+      border-bottom: 2px solid var(--text-dark);
       position: relative;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1.2fr 1fr;
+      }
     }
 
     .hero-content {
+      padding: clamp(2.5rem, 6vw, 5rem) var(--pad-x);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--text-dark);
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    @media (min-width: 960px) {
+      .hero-content {
+        border-bottom: none;
+        border-right: 2px solid var(--text-dark);
+      }
+    }
+
+    .hero-badge-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-tag {
+      background-color: transparent;
+      border: 1.5px solid var(--text-dark);
+      padding: 0.35rem 0.85rem;
       font-size: 0.72rem;
-      letter-spacing: 0.2em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--gold-main);
-      background: rgba(205, 176, 135, 0.08);
-      border-left: 2px solid var(--gold-main);
-      padding: 6px 14px;
-      width: fit-content;
+    }
+
+    .badge-tag.highlight {
+      background-color: var(--peach);
+      color: var(--text-dark);
+      border-color: var(--text-dark);
     }
 
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.3rem, 6.5vw, 4.3rem);
-      font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: -0.01em;
-      color: var(--text-white);
+      font-size: clamp(3.2rem, 8.5vw, 6.8rem);
+      margin-bottom: 2rem;
     }
 
-    .hero-title em {
+    .hero-title .italic-cut {
       font-style: italic;
-      font-family: var(--font-serif);
-      color: var(--gold-main);
-      font-weight: 300;
+      color: var(--cobalt);
+      display: inline-block;
     }
 
-    .hero-lead {
-      color: var(--text-dim);
-      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
-      max-width: 540px;
-      line-height: 1.7;
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dark);
     }
 
-    .hero-stats-row {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      padding: 16px 0;
-      border-top: 1px solid var(--border-line);
-      border-bottom: 1px solid var(--border-line);
-      margin: 10px 0;
+    @media (min-width: 600px) {
+      .hero-meta {
+        grid-template-columns: 1.4fr 1fr;
+      }
     }
 
-    .stat-item {
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .hero-ctas {
       display: flex;
       flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .stat-num {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      color: var(--gold-light);
-      line-height: 1.1;
-    }
-
-    .stat-label {
-      font-size: 0.72rem;
+    .btn-massive {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 1.05rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
-
-    .hero-cta-group {
+      letter-spacing: 0.03em;
+      padding: 1.2rem 1.8rem;
+      background-color: var(--cobalt);
+      color: #fff;
+      border: 2px solid var(--text-dark);
+      box-shadow: 4px 4px 0px var(--text-dark);
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 16px 32px;
-      background: var(--gold-main);
-      color: #000;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: var(--radius-sm);
-      box-shadow: 0 8px 24px rgba(205, 176, 135, 0.25);
-      cursor: pointer;
+      gap: 0.75rem;
     }
 
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(205, 176, 135, 0.4);
+    .btn-massive:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--text-dark);
+      background-color: var(--text-dark);
+      color: #fff;
     }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 16px 28px;
-      background: transparent;
-      color: var(--text-white);
-      border: 1px solid var(--border-line);
+      font-family: var(--font-headline);
+      font-weight: 800;
       font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      padding: 0.9rem 1.4rem;
+      background-color: transparent;
+      color: var(--text-dark);
+      border: 2px solid var(--text-dark);
+      text-align: center;
+      transition: var(--transition);
     }
 
     .btn-secondary:hover {
-      border-color: var(--gold-main);
-      background: rgba(205, 176, 135, 0.06);
+      background-color: var(--peach);
     }
 
-    /* HERO SHOWCASE FRAME */
-    .hero-visual {
+    .hero-visual-frame {
       position: relative;
-    }
-
-    .hero-frame-wrapper {
-      position: relative;
-      border-radius: var(--radius-lg);
-      padding: 10px;
-      border: 1px solid var(--border-line);
-      background: linear-gradient(180deg, rgba(25, 23, 21, 0.9) 0%, rgba(15, 14, 13, 0.95) 100%);
-    }
-
-    .hero-main-img {
-      width: 100%;
-      height: 480px;
-      border-radius: calc(var(--radius-lg) - 6px);
-      filter: contrast(102%) brightness(96%);
-    }
-
-    .hero-badge-overlay {
-      position: absolute;
-      bottom: -18px;
-      left: 24px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-highlight);
-      padding: 14px 20px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
-    }
-
-    .badge-icon {
-      color: var(--gold-main);
-      font-size: 1.4rem;
-    }
-
-    .badge-text-top {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gold-main);
-      font-weight: 600;
-    }
-
-    .badge-text-bot {
-      font-size: 0.85rem;
-      font-family: var(--font-serif);
-      color: var(--text-white);
-    }
-
-    /* TICKER */
-    .ticker-wrap {
+      background-color: #ddd;
       overflow: hidden;
-      border-top: 1px solid var(--border-line);
-      border-bottom: 1px solid var(--border-line);
-      padding: 16px 0;
-      margin: 60px 0;
-      background: rgba(20, 19, 17, 0.4);
+      min-height: 480px;
     }
 
-    .ticker-content {
+    .hero-visual-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+      filter: grayscale(15%) contrast(105%);
+      transition: transform 0.8s ease;
+    }
+
+    .hero-visual-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(22, 22, 22, 0.9) 0%, rgba(22, 22, 22, 0) 100%);
+      color: #fff;
       display: flex;
-      white-space: nowrap;
-      gap: 36px;
-      animation: ticker 25s linear infinite;
+      justify-content: space-between;
+      align-items: flex-end;
     }
 
-    .ticker-item {
-      font-size: 0.78rem;
-      letter-spacing: 0.22em;
+    .hero-image-caption {
+      font-family: var(--font-headline);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      display: flex;
+    }
+
+    /* MARQUEE RUNNER */
+    .marquee-wrapper {
+      background-color: var(--text-dark);
+      color: var(--bg-light);
+      border-bottom: 2px solid var(--text-dark);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 1rem 0;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 26s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0 1.5rem;
+      display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 1.5rem;
     }
 
-    .ticker-sep {
-      color: var(--gold-main);
-      opacity: 0.4;
+    .marquee-item .sep {
+      color: var(--peach);
+      font-size: 1.2rem;
     }
 
-    @keyframes ticker {
+    @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    /* SECTION BASICS */
-    .section {
-      padding: 90px 0;
-      position: relative;
+    /* METRICS / STATS SECTION */
+    .stats-section {
+      border-bottom: 2px solid var(--text-dark);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    .section-header {
-      margin-bottom: 50px;
-      text-align: left;
+    @media (min-width: 768px) {
+      .stats-section {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
-    .section-sub {
-      font-size: 0.75rem;
-      letter-spacing: 0.24em;
+    .stat-box {
+      padding: 2.5rem 1.5rem;
+      border-right: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-color: var(--bg-light);
+      transition: var(--transition);
+    }
+
+    .stat-box:nth-child(2n) {
+      border-right: none;
+    }
+
+    @media (min-width: 768px) {
+      .stat-box:nth-child(2n) {
+        border-right: 1px solid var(--border-dark);
+      }
+      .stat-box:last-child {
+        border-right: none;
+      }
+    }
+
+    .stat-box:hover {
+      background-color: #fff;
+    }
+
+    .stat-number {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .stat-number.accent {
+      color: var(--cobalt);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 700;
       text-transform: uppercase;
-      color: var(--gold-main);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-heading {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4.2vw, 3.2rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--text-white);
-    }
-
-    .section-heading em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    .section-desc {
-      color: var(--text-dim);
-      font-size: 0.95rem;
-      max-width: 580px;
-      margin-top: 12px;
-      line-height: 1.7;
+      letter-spacing: 0.08em;
+      color: #555;
     }
 
     /* SERVICES SECTION */
+    .services-section {
+      padding: clamp(3rem, 7vw, 6rem) var(--pad-x);
+      border-bottom: 2px solid var(--text-dark);
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    @media (min-width: 768px) {
+      .section-head {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    .section-num {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      color: var(--peach);
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-line);
-      border-radius: var(--radius-md);
-      padding: 36px 30px;
-      position: relative;
+      background-color: #fff;
+      border: 2px solid var(--text-dark);
+      box-shadow: 6px 6px 0px var(--text-dark);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: var(--transition);
+      position: relative;
       overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold-main), transparent);
-      opacity: 0;
       transition: var(--transition);
     }
 
     .service-card:hover {
-      border-color: var(--border-highlight);
-      background: var(--bg-card-hover);
       transform: translateY(-4px);
+      box-shadow: 10px 10px 0px var(--text-dark);
     }
 
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .service-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .service-badge {
-      display: inline-block;
-      padding: 6px 12px;
-      background: rgba(205, 176, 135, 0.1);
-      border: 1px solid rgba(205, 176, 135, 0.25);
-      border-radius: 999px;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: var(--gold-main);
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .service-duration {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .service-duration svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--gold-main);
-    }
-
-    .service-title {
-      font-family: var(--font-serif);
-      font-size: 1.85rem;
-      font-weight: 500;
-      color: var(--text-white);
-      margin-bottom: 14px;
-      line-height: 1.25;
-    }
-
-    .service-text {
-      color: var(--text-dim);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .service-action-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 14px 20px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-line);
-      border-radius: var(--radius-sm);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      cursor: pointer;
-    }
-
-    .service-action-btn:hover {
-      background: var(--gold-main);
-      color: #000;
-      border-color: var(--gold-main);
-    }
-
-    .service-action-btn svg {
-      transition: transform 0.3s ease;
-      width: 16px;
-      height: 16px;
-    }
-
-    .service-action-btn:hover svg {
-      transform: translateX(4px);
-    }
-
-    /* ABOUT / PHILOSOPHY */
-    .about-wrap {
-      background: linear-gradient(180deg, rgba(20, 19, 17, 0.8) 0%, rgba(13, 12, 11, 0.95) 100%);
-      border-top: 1px solid var(--border-line);
-      border-bottom: 1px solid var(--border-line);
-      padding: 90px 0;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .about-visual {
+    .service-card-media {
+      height: 320px;
+      border-bottom: 2px solid var(--text-dark);
+      overflow: hidden;
       position: relative;
     }
 
-    .about-img-box {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--border-line);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    }
-
-    .about-img-box img {
+    .service-card-media img {
       width: 100%;
-      height: 440px;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.6s ease;
     }
 
-    .about-img-box:hover img {
-      transform: scale(1.03);
+    .service-card:hover .service-card-media img {
+      transform: scale(1.05);
     }
 
-    .about-caption-box {
+    .card-floating-badge {
       position: absolute;
-      bottom: -20px;
-      right: 20px;
-      background: var(--bg-surface);
-      border: 1px solid var(--gold-dark);
-      padding: 16px 22px;
-      border-radius: var(--radius-sm);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    }
-
-    .caption-brand {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--gold-light);
-    }
-
-    .caption-sub {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--peach);
+      border: 1.5px solid var(--text-dark);
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      padding: 0.4rem 0.8rem;
     }
 
-    .about-content {
+    .card-duration-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--text-dark);
+      color: #fff;
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .service-body {
+      padding: 2.2rem;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
-    .about-pillars {
+    .service-title {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .service-desc {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .service-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .link-arrow {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: var(--cobalt);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.2s ease;
+    }
+
+    .link-arrow:hover {
+      gap: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    /* PHILOSOPHY & ATMOSPHERE (DARK BLOCK) */
+    .dark-block {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      padding: clamp(3.5rem, 8vw, 7rem) var(--pad-x);
+      border-bottom: 2px solid var(--text-dark);
+      position: relative;
+    }
+
+    .dark-head-label {
+      color: var(--peach);
+      margin-bottom: 1rem;
+    }
+
+    .dark-big-statement {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 0.98;
+      max-width: 1100px;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+
+    .dark-big-statement .glow {
+      color: var(--peach);
+    }
+
+    .philosophy-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 10px;
+      gap: 2rem;
+      border-top: 1px solid var(--border-light);
+      padding-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .philosophy-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .pillar-card {
-      display: flex;
-      gap: 16px;
-      padding: 16px;
-      background: rgba(25, 23, 21, 0.5);
-      border: 1px solid rgba(205, 176, 135, 0.12);
-      border-radius: var(--radius-sm);
+      padding-right: 1.5rem;
     }
 
     .pillar-num {
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      color: var(--gold-main);
-      line-height: 1;
+      font-family: var(--font-headline);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--cobalt);
+      margin-bottom: 1rem;
+      display: block;
     }
 
     .pillar-title {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--text-white);
-      margin-bottom: 4px;
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: #fff;
     }
 
     .pillar-desc {
-      font-size: 0.83rem;
-      color: var(--text-dim);
-      line-height: 1.5;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #bbb;
     }
 
-    /* GALLERY SECTION */
-    .gallery-grid {
+    /* GALLERY MOSAIC */
+    .gallery-section {
+      padding: clamp(3rem, 7vw, 6rem) var(--pad-x);
+      border-bottom: 2px solid var(--text-dark);
+    }
+
+    .gallery-header-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-header-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    .gallery-mosaic {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 680px) {
+      .gallery-mosaic {
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .g-item-1 { grid-column: span 7; height: 500px; }
+      .g-item-2 { grid-column: span 5; height: 500px; }
+      .g-item-3 { grid-column: span 4; height: 420px; }
+      .g-item-4 { grid-column: span 4; height: 420px; }
+      .g-item-5 { grid-column: span 4; height: 420px; }
     }
 
     .gallery-item {
       position: relative;
-      border-radius: var(--radius-md);
+      border: 2px solid var(--text-dark);
       overflow: hidden;
-      border: 1px solid var(--border-line);
-      aspect-ratio: 4 / 5;
-      background: var(--bg-card);
+      background-color: #222;
+      box-shadow: 4px 4px 0px var(--text-dark);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(11, 10, 9, 0.9) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 24px;
-      opacity: 0;
-      transition: var(--transition);
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+      filter: grayscale(10%) contrast(105%);
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: brightness(0.85);
+      transform: scale(1.06);
+      filter: grayscale(0%) contrast(110%);
     }
 
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-
-    .gallery-tag {
-      font-size: 0.68rem;
+    .gallery-item-tag {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background-color: var(--text-dark);
+      color: var(--bg-light);
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--gold-main);
-      margin-bottom: 4px;
+      padding: 0.35rem 0.75rem;
+      pointer-events: none;
     }
 
-    .gallery-title {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--text-white);
+    /* APPOINTMENT FORM SECTION */
+    .appointment-section {
+      padding: clamp(3.5rem, 8vw, 7rem) var(--pad-x);
+      border-bottom: 2px solid var(--text-dark);
+      background-color: #F8F6F2;
     }
 
-    /* BOOKING FORM SECTION */
-    .booking-section {
-      background: radial-gradient(circle at center, rgba(205, 176, 135, 0.08) 0%, transparent 70%);
-    }
-
-    .booking-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-highlight);
-      border-radius: var(--radius-lg);
-      padding: 38px 24px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
-      max-width: 820px;
+    .booking-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      max-width: 1240px;
       margin: 0 auto;
     }
 
-    .booking-form-header {
-      text-align: center;
-      margin-bottom: 36px;
+    @media (min-width: 900px) {
+      .booking-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: start;
+      }
     }
 
-    .booking-form-header h3 {
-      font-family: var(--font-serif);
-      font-size: 2.1rem;
-      color: var(--text-white);
-      margin-bottom: 8px;
+    .booking-text-col .subtitle {
+      color: var(--cobalt);
+      margin-bottom: 1rem;
     }
 
-    .booking-form-header p {
-      color: var(--text-dim);
-      font-size: 0.88rem;
+    .booking-heading {
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      margin-bottom: 1.5rem;
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+    .booking-lead {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    .direct-dm-box {
+      border: 2px solid var(--text-dark);
+      background-color: #fff;
+      padding: 1.5rem;
+      box-shadow: 4px 4px 0px var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .dm-info-left strong {
+      display: block;
+      font-family: var(--font-headline);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .dm-info-left span {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    /* FORM STYLES */
+    .form-card {
+      background-color: #fff;
+      border: 2px solid var(--text-dark);
+      box-shadow: 8px 8px 0px var(--text-dark);
+      padding: clamp(2rem, 5vw, 3rem);
+    }
+
+    .form-title {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
     }
 
     .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      margin-bottom: 1.5rem;
     }
 
     .form-label {
-      font-size: 0.74rem;
-      letter-spacing: 0.12em;
+      display: block;
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      color: var(--gold-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 1rem 1.1rem;
+      border: 2px solid var(--text-dark);
+      background-color: var(--bg-light);
+      font-size: 0.95rem;
       font-weight: 500;
-    }
-
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      background: rgba(11, 10, 9, 0.85);
-      border: 1px solid var(--border-line);
-      border-radius: var(--radius-sm);
-      padding: 14px 16px;
-      font-size: 0.92rem;
-      color: var(--text-white);
+      color: var(--text-dark);
       transition: var(--transition);
     }
 
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--gold-main);
-      background: rgba(18, 16, 14, 0.95);
-      box-shadow: 0 0 0 2px rgba(205, 176, 135, 0.2);
+    .form-control:focus {
+      background-color: #fff;
+      border-color: var(--cobalt);
+      box-shadow: 0 0 0 3px rgba(26, 68, 237, 0.15);
     }
 
-    .form-select option {
-      background: var(--bg-surface);
-      color: var(--text-white);
-    }
-
-    .form-textarea {
-      resize: vertical;
-      min-height: 90px;
-    }
-
-    .btn-submit-booking {
-      width: 100%;
-      padding: 18px 28px;
-      background: var(--gold-main);
-      color: #0B0A09;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.88rem;
-      border-radius: var(--radius-sm);
+    .select-control {
+      appearance: none;
+      -webkit-appearance: none;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23161616' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.2rem center;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 580px) {
+      .form-grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .btn-submit {
+      width: 100%;
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1.2rem;
+      background-color: var(--peach);
+      color: var(--text-dark);
+      border: 2px solid var(--text-dark);
+      box-shadow: 4px 4px 0px var(--text-dark);
+      cursor: pointer;
+      margin-top: 0.5rem;
       transition: var(--transition);
-    }
-
-    .btn-submit-booking:hover {
-      background: var(--gold-light);
-      box-shadow: 0 10px 25px rgba(205, 176, 135, 0.35);
-      transform: translateY(-2px);
-    }
-
-    .form-note {
-      text-align: center;
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      margin-top: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 0.6rem;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--cobalt);
+      color: #fff;
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--text-dark);
     }
 
     /* FOOTER */
     .site-footer {
-      border-top: 1px solid var(--border-line);
-      background: #080706;
-      padding: 60px 0 35px 0;
-      margin-top: 70px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      margin-bottom: 45px;
-    }
-
-    .footer-col-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .footer-desc {
-      color: var(--text-dim);
-      font-size: 0.85rem;
-      max-width: 360px;
-      line-height: 1.7;
-    }
-
-    .footer-col-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold-main);
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--text-dim);
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-
-    .footer-contact-item svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      color: var(--gold-main);
-      margin-top: 2px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      text-align: center;
-    }
-
-    .copyright-text {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-    }
-
-    .signature-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      background: rgba(205, 176, 135, 0.06);
-      padding: 6px 14px;
-      border: 1px solid var(--border-line);
-      border-radius: 999px;
-    }
-
-    .signature-badge strong {
-      color: var(--gold-main);
-      font-weight: 700;
-    }
-
-    /* MODAL POPUP */
-    .custom-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .custom-modal.active {
-      display: flex;
-    }
-
-    .modal-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-highlight);
-      border-radius: var(--radius-md);
-      padding: 32px 26px;
-      max-width: 440px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      padding: clamp(3rem, 6vw, 5rem) var(--pad-x) 2rem;
       position: relative;
     }
 
-    .modal-icon {
-      width: 54px;
-      height: 54px;
-      background: rgba(205, 176, 135, 0.12);
-      color: var(--gold-main);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 18px;
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border-light);
     }
 
-    .modal-title {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      color: var(--text-white);
-      margin-bottom: 8px;
+    @media (min-width: 860px) {
+      .footer-top {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
     }
 
-    .modal-desc {
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      margin-bottom: 24px;
+    .footer-huge-logo {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      line-height: 0.95;
+    }
+
+    .footer-huge-logo span {
+      color: var(--peach);
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .footer-bio {
+      font-size: 0.95rem;
+      color: #999;
       line-height: 1.6;
+      max-width: 440px;
     }
 
-    .modal-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--gold-main);
-      color: #000;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      display: inline-block;
+    .footer-col-title {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      color: var(--peach);
+      margin-bottom: 1.25rem;
     }
 
-    .modal-close-x {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 1.2rem;
-      padding: 4px 8px;
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: #ccc;
     }
 
-    /* RESPONSIVE MEDIA QUERIES */
-    @media (min-width: 640px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .form-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .form-group.full-width {
-        grid-column: span 2;
-      }
+    .footer-list li strong {
+      color: #fff;
     }
 
-    @media (min-width: 992px) {
-      .header-center-pill {
-        display: flex;
-      }
-      .hero-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 60px;
-      }
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-      }
-      .about-pillars {
-        grid-template-columns: 1fr;
-      }
-      .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .gallery-item:first-child {
-        grid-column: span 2;
-        aspect-ratio: 16 / 9;
-      }
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr;
-      }
+    .footer-list a:hover {
+      color: var(--peach);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      font-size: 0.78rem;
+      color: #777;
+    }
+
+    @media (min-width: 768px) {
       .footer-bottom {
         flex-direction: row;
+      }
+    }
+
+    .doel-badge {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .doel-badge span {
+      background-color: var(--cobalt);
+      color: #fff;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.7rem;
+    }
+
+    /* FLOATING QUICK DM BUTTON (MOBILE) */
+    .mobile-float-cta {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.4rem;
+      background-color: var(--cobalt);
+      color: #fff;
+      border: 2px solid var(--text-dark);
+      box-shadow: 4px 4px 0px var(--text-dark);
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: var(--transition);
+    }
+
+    .mobile-float-cta:hover {
+      background-color: var(--peach);
+      color: var(--text-dark);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--text-dark);
+    }
+
+    @media (min-width: 860px) {
+      .mobile-float-cta {
+        display: none;
       }
     }
   </style>
@@ -1069,457 +1057,429 @@
 
   <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="brand-logo">
-        <span class="brand-title">luxury</span>
-        <span class="brand-subtitle">by Ayşin</span>
+    <a href="#" class="brand-title">
+      luxury <span>by ayşin</span>
+    </a>
+
+    <div class="header-center">
+      <div class="status-dot"></div>
+      <span>BURSA / FSM BULVARI &bull; RANDEVU AÇIK</span>
+    </div>
+
+    <div class="header-actions">
+      <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" class="btn-compact" aria-label="Instagram Sayfası">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        <span>8.6K</span>
       </a>
-
-      <div class="header-center-pill">
-        <span class="location-dot"></span>
-        <span>BURSA / FSM BULVARI</span>
-      </div>
-
-      <div class="header-actions">
-        <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" class="ig-header-btn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-          <span>Instagram</span>
-          <span class="ig-count">8.6K</span>
-        </a>
-      </div>
+      <a href="#randevu" class="btn-compact btn-cobalt">RANDEVU</a>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span>BURSA • FSM BULVARI VIP GÜZELLİK</span>
-        </div>
+  <main>
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div>
+            <div class="hero-badge-strip">
+              <span class="badge-tag highlight">BURSA / FSM BULVARI</span>
+              <span class="badge-tag">GÜZELLİK PROTOKOLLERİ</span>
+              <span class="badge-tag">BÖLGESEL İNCELME</span>
+            </div>
 
-        <h1 class="hero-title">
-          Kişiye Özel Protokoller, <em>Kusursuz İncelik.</em>
-        </h1>
-
-        <p class="hero-lead">
-          Kıl kökü analizine dayalı ileri teknoloji epilasyon ve selülit karşıtı ritmik G5 bölgesel incelme terapileriyle Bursa'da lüks estetik deneyimini yeniden tanımlıyoruz.
-        </p>
-
-        <div class="hero-stats-row">
-          <div class="stat-item">
-            <span class="stat-num">8.650+</span>
-            <span class="stat-label">Takipçi & Danışan</span>
+            <h1 class="headline-huge hero-title">
+              KUSURSUZ <br>
+              <span class="italic-cut">DOKUNUŞ,</span> <br>
+              NET SONUÇ.
+            </h1>
           </div>
-          <div class="stat-item">
-            <span class="stat-num">440+</span>
-            <span class="stat-label">Başarılı Protokol</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">%100</span>
-            <span class="stat-label">Steril & VIP Konfor</span>
-          </div>
-        </div>
 
-        <div class="hero-cta-group">
-          <a href="#randevu" class="btn-primary">
-            <span>Randevu Planla</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-            <span>Instagram DM</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-frame-wrapper">
-          <img src="img/luxury-by-aysin/07.jpg" alt="luxury by Ayşin Salon Deneyimi" class="hero-main-img">
-          <div class="hero-badge-overlay">
-            <span class="badge-icon">✦</span>
-            <div>
-              <div class="badge-text-top">VIP PROTOKOL</div>
-              <div class="badge-text-bot">Kişiselleştirilmiş Bakım Suiti</div>
+          <div class="hero-meta">
+            <p class="hero-desc">
+              <strong>luxury by Ayşin</strong> — Bursa FSM Bulvarı'nda en ileri teknoloji epilasyon protokolleri ve hedef odaklı G5 masajı. Bedeniniz için bilimsel hassasiyet, yüksek estetik standart.
+            </p>
+            <div class="hero-ctas">
+              <a href="#randevu" class="btn-massive">
+                <span>RANDEVU OLUŞTUR</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                INSTAGRAM DM İLE DANIŞ
+              </a>
             </div>
           </div>
         </div>
+
+        <div class="hero-visual-frame">
+          <img src="img/luxury-by-aysin/07.jpg" alt="luxury by Ayşin Çalışması" loading="eager">
+          <div class="hero-image-overlay">
+            <div>
+              <p class="editorial-label" style="color: var(--peach);">SEÇKİN PROTOKOL</p>
+              <p class="hero-image-caption">FSM BULVARI MERKEZİ / BURSA</p>
+            </div>
+            <span class="editorial-label">ESTETİK KONSEPT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE BANNER -->
+    <div class="marquee-wrapper" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">LUXURY BY AYŞİN <span class="sep">/</span> KİŞİYE ÖZEL EPİLASYON <span class="sep">/</span> G5 MASAJI & BÖLGESEL İNCELME <span class="sep">/</span> BURSA FSM BULVARI <span class="sep">/</span> MAKSİMUM KONFOR <span class="sep">/</span></div>
+        <div class="marquee-item">LUXURY BY AYŞİN <span class="sep">/</span> KİŞİYE ÖZEL EPİLASYON <span class="sep">/</span> G5 MASAJI & BÖLGESEL İNCELME <span class="sep">/</span> BURSA FSM BULVARI <span class="sep">/</span> MAKSİMUM KONFOR <span class="sep">/</span></div>
       </div>
     </div>
-  </section>
 
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker-content">
-      <span class="ticker-item">KİŞİYE ÖZEL EPİLASYON PROTOKOLÜ <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">BÖLGESEL İNCELME & G5 MASAJI <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">BURSA FSM BULVARI <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">HİJYENİK STERİLİZASYON GÜVENCESİ <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">8600+ MEMNUNİYET ODAKLI TOPLULUK <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">KİŞİYE ÖZEL EPİLASYON PROTOKOLÜ <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">BÖLGESEL İNCELME & G5 MASAJI <span class="ticker-sep">◆</span></span>
-      <span class="ticker-item">BURSA FSM BULVARI <span class="ticker-sep">◆</span></span>
-    </div>
-  </div>
+    <!-- SAYAÇLAR / METRICS -->
+    <section class="stats-section">
+      <div class="stat-box">
+        <div class="stat-number accent">8650+</div>
+        <div class="stat-label">Aktif Instagram Topluluğu</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">440+</div>
+        <div class="stat-label">Paylaşılan Seans & Sonuç</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number accent">%100</div>
+        <div class="stat-label">Kişiye Özel Analiz & Takip</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">FSM</div>
+        <div class="stat-label">Bursa Nilüfer Lokasyonu</div>
+      </div>
+    </section>
 
-  <!-- SERVICES SECTION -->
-  <section class="section" id="hizmetler">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-sub">UZMAN UYGULAMALAR</span>
-        <h2 class="section-heading">Bilim ve Konforun <em>Zarif Dengesi</em></h2>
-        <p class="section-desc">Her bireyin vücut dinamikleri ve kıl yapısı eşsizdir. Standart çözümler yerine analiz odaklı, yüksek verimli protokoller sunuyoruz.</p>
+    <!-- HİZMETLERİMİZ -->
+    <section class="services-section" id="hizmetler">
+      <div class="section-head">
+        <div>
+          <span class="section-num">01 / UZMANLIK ALANLARI</span>
+          <h2 class="headline-huge section-title">HEDEF ODAKLI<br>PROTOKOLLER</h2>
+        </div>
+        <p style="max-width: 380px; font-size: 0.95rem; color: #555;">
+          Her cilt ve vücut tipi kendine özgüdür. Ezbere seanslar yerine bilimsel kıl kökü tespiti ve doku stimülasyonu uygularız.
+        </p>
       </div>
 
       <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
+        <!-- Hizmet 1 -->
+        <article class="service-card">
           <div>
-            <div class="service-top">
-              <span class="service-badge">Maksimum Konfor</span>
-              <div class="service-duration">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <span>30 Dakika</span>
+            <div class="service-card-media">
+              <img src="img/luxury-by-aysin/04.jpg" alt="luxury by Ayşin Epilasyon Seansı" loading="lazy">
+              <span class="card-floating-badge">Maksimum Konfor</span>
+              <span class="card-duration-badge">30 DK</span>
+            </div>
+
+            <div class="service-body">
+              <div>
+                <span class="editorial-label" style="color: var(--cobalt);">DERMATOLOJİK YAKLAŞIM</span>
+                <h3 class="headline-huge service-title" style="margin-top: 0.4rem;">Kişiye Özel Epilasyon Protokolü</h3>
+                <p class="service-desc">
+                  Kıl kökü analizine göre belirlenen dalga boyuyla maksimum sonuç, minimum seans garantisi. Ten rengi ve kıl yapısına özel kalibre edilen soğutma sistemiyle konforlu deneyim.
+                </p>
+              </div>
+
+              <div class="service-action-row">
+                <a href="#randevu" class="link-arrow" onclick="selectService('Kişiye Özel Epilasyon Protokolü')">
+                  <span>BU PROTOKOLE RANDEVU AL</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
               </div>
             </div>
-            <h3 class="service-title">Kişiye Özel Epilasyon Protokolü</h3>
-            <p class="service-text">
-              Kıl kökü analizine göre belirlenen dalga boyuyla maksimum sonuç, minimum seans garantisi. Gelişmiş soğutma sistemi sayesinde acısız, pürüzsüz ve kalıcı konfor.
-            </p>
           </div>
-          <button class="service-action-btn" onclick="selectServiceAndScroll('Kişiye Özel Epilasyon Protokolü')">
-            <span>Randevu Talebi Oluştur</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-        </div>
+        </article>
 
-        <!-- Service 2 -->
-        <div class="service-card">
+        <!-- Hizmet 2 -->
+        <article class="service-card">
           <div>
-            <div class="service-top">
-              <span class="service-badge">Hedefli Sıkılaşma</span>
-              <div class="service-duration">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <span>40 Dakika</span>
+            <div class="service-card-media">
+              <img src="img/luxury-by-aysin/08.jpg" alt="luxury by Ayşin G5 Bölgesel İncelme" loading="lazy">
+              <span class="card-floating-badge" style="background-color: var(--cobalt); color: #fff;">Hedefli Sıkılaşma</span>
+              <span class="card-duration-badge">40 DK</span>
+            </div>
+
+            <div class="service-body">
+              <div>
+                <span class="editorial-label" style="color: var(--peach);">DOKU DİSİPLİNİ</span>
+                <h3 class="headline-huge service-title" style="margin-top: 0.4rem;">Bölgesel İncelme & G5 Masajı</h3>
+                <p class="service-desc">
+                  Ritmik titreşim dalgalarıyla kan dolaşımını hızlandıran, inatçı selülit ve ödem görünümünü azaltan hedef odaklı derin kas ve doku sıkılaşma ritüeli.
+                </p>
+              </div>
+
+              <div class="service-action-row">
+                <a href="#randevu" class="link-arrow" onclick="selectService('Bölgesel İncelme & G5 Masajı')">
+                  <span>BU PROTOKOLE RANDEVU AL</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
               </div>
             </div>
-            <h3 class="service-title">Bölgesel İncelme & G5 Masajı</h3>
-            <p class="service-text">
-              Ritmik masaj dalgalarıyla kan dolaşımını hızlandıran, selülit ve ödem görünümünü azaltan hedef odaklı sıkılaşma ve toparlanma protokolü.
-            </p>
           </div>
-          <button class="service-action-btn" onclick="selectServiceAndScroll('Bölgesel İncelme & G5 Masajı')">
-            <span>Randevu Talebi Oluştur</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-        </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PHILOSOPHY / ABOUT -->
-  <section class="about-wrap" id="hakkimizda">
-    <div class="container about-grid">
-      <div class="about-visual">
-        <div class="about-img-box">
-          <img src="img/luxury-by-aysin/04.jpg" alt="luxury by Ayşin Hijyenik Salon Ambiyansı">
-        </div>
-        <div class="about-caption-box">
-          <div class="caption-brand">luxury by Ayşin</div>
-          <div class="caption-sub">FSM Bulvarı / Bursa</div>
-        </div>
-      </div>
+    <!-- FELSEFE VE KLİNİK STANDART (KÖMÜR SİYAHI BLOK) -->
+    <section class="dark-block">
+      <p class="editorial-label dark-head-label">LÜKS VE DİSİPLİN</p>
+      <h2 class="headline-huge dark-big-statement">
+        GÜZELLİK TESADÜF DEĞİL, <br>
+        <span class="glow">BİLİMSEL ANALİZ</span> VE <br>
+        KUSURSUZ HİJYEN İŞİDİR.
+      </h2>
 
-      <div class="about-content">
-        <span class="section-sub">SALON FELSEFESİ</span>
-        <h2 class="section-heading">Lüks Bir Bakım, <em>Titiz Bir Standart</em></h2>
-        <p class="section-desc">
-          luxury by Ayşin, Bursa'nın en seçkin noktası FSM Bulvarı'nda misafirlerine özel suitlerde estetik, hijyen ve huzuru bir arada sunar.
-        </p>
-
-        <div class="about-pillars">
-          <div class="pillar-card">
-            <span class="pillar-num">01</span>
-            <div>
-              <h4 class="pillar-title">Medikal Standartlarda Hijyen</h4>
-              <p class="pillar-desc">Her seans öncesinde otoklav seviyesinde sterilize edilmiş ekipman ve tek kullanımlık medikal örtüler.</p>
-            </div>
-          </div>
-
-          <div class="pillar-card">
-            <span class="pillar-num">02</span>
-            <div>
-              <h4 class="pillar-title">Kişiye Özgü Analitik Teşhis</h4>
-              <p class="pillar-desc">Ten tipi ve doku ihtiyacına göre seans süreleri, frekans parametreleri ve takip planı oluşturulur.</p>
-            </div>
-          </div>
-
-          <div class="pillar-card">
-            <span class="pillar-num">03</span>
-            <div>
-              <h4 class="pillar-title">Konforlu ve Gizlilik Odaklı Suit</h4>
-              <p class="pillar-desc">Danışan mahremiyetine ve rahatlığına adanmış izole, sakinleştirici salon atmosferi.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO / GALLERY -->
-  <section class="section" id="portfolyo">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-sub">GERÇEK SONUÇLAR & AMBİYANS</span>
-        <h2 class="section-heading">Stüdyodan <em>Kareler</em></h2>
-        <p class="section-desc">FSM Bulvarı stüdyomuzda gerçekleştirdiğimiz güncel uygulamalar ve danışan deneyimlerinden anlar.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="img/luxury-by-aysin/08.jpg" alt="luxury by Ayşin Uygulama">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">İleri Seviye Teknoloji</span>
-            <div class="gallery-title">Özel Epilasyon Odası</div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="img/luxury-by-aysin/05.jpg" alt="luxury by Ayşin Hizmet">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">Bölgesel İncelme</span>
-            <div class="gallery-title">G5 Ritmik Terapi Seansı</div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="img/luxury-by-aysin/06.jpg" alt="luxury by Ayşin Detay">
-          <div class="gallery-overlay">
-            <span class="gallery-tag">Danışan Memnuniyeti</span>
-            <div class="gallery-title">Hassas Cilt Protokolü</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING FORM -->
-  <section class="section booking-section" id="randevu">
-    <div class="container">
-      <div class="booking-card">
-        <div class="booking-form-header">
-          <span class="section-sub">VIP REZERVASYON</span>
-          <h3>Randevu Talebinizi Oluşturun</h3>
-          <p>Bilgilerinizi girin; talebiniz Instagram DM veya mesaj yoluyla yetkilimize doğrudan iletilsin.</p>
-        </div>
-
-        <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label" for="clientName">Adınız Soyadınız *</label>
-              <input type="text" id="clientName" class="form-input" placeholder="Örn: Selin Yılmaz" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="clientPhone">Telefon Numaranız *</label>
-              <input type="tel" id="clientPhone" class="form-input" placeholder="05XX XXX XX XX" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="serviceSelect">Hizmet Seçimi *</label>
-              <select id="serviceSelect" class="form-select" required>
-                <option value="" disabled selected>Uygulama Seçiniz</option>
-                <option value="Kişiye Özel Epilasyon Protokolü (30 dk)">Kişiye Özel Epilasyon Protokolü (30 dk)</option>
-                <option value="Bölgesel İncelme & G5 Masajı (40 dk)">Bölgesel İncelme & G5 Masajı (40 dk)</option>
-                <option value="Kapsamlı Cilt & Vücut Analiz Konsültasyonu">Kapsamlı Konsültasyon & Analiz</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="prefTime">Tercih Edilen Zaman</label>
-              <select id="prefTime" class="form-select">
-                <option value="En Yakın Uygun Saat">En Yakın Uygun Saat</option>
-                <option value="Hafta İçi - Sabah (10:00 - 13:00)">Hafta İçi - Sabah (10:00 - 13:00)</option>
-                <option value="Hafta İçi - Öğleden Sonra (14:00 - 18:00)">Hafta İçi - Öğleden Sonra (14:00 - 18:00)</option>
-                <option value="Cumartesi">Cumartesi</option>
-              </select>
-            </div>
-
-            <div class="form-group full-width">
-              <label class="form-label" for="clientNote">Ek Notunuz (İsteğe Bağlı)</label>
-              <textarea id="clientNote" class="form-textarea" placeholder="Belirtmek istediğiniz hassasiyet veya seans tercihi..."></textarea>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-submit-booking">
-            <span>Talebi İlet & Instagram DM'ye Aktar</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
-
-          <div class="form-note">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            <span>Talebiniz kopyalanarak doğrudan @luxuryguzelliksalonu Instagram hattına aktarılır.</span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col-brand">
-          <a href="#" class="brand-logo">
-            <span class="brand-title">luxury</span>
-            <span class="brand-subtitle">by Ayşin</span>
-          </a>
-          <p class="footer-desc">
-            Bursa FSM Bulvarı'nda en yüksek hijyen standartlarında epilasyon ve bölgesel incelme çözümleri.
+      <div class="philosophy-grid">
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h3 class="pillar-title">Sterilizasyon Disiplini</h3>
+          <p class="pillar-desc">
+            Her uygulama öncesinde cihaz başlıkları, seans alanları ve ekipmanlar hastane standardında dezenfekte edilir. Sıfır risk, kusursuz ferahlık.
           </p>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Lokasyon & İletişim</h4>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <span>FSM Bulvarı, Nilüfer / BURSA</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-            <span>@luxuryguzelliksalonu</span>
-          </div>
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h3 class="pillar-title">Kökten Doku Analizi</h3>
+          <p class="pillar-desc">
+            Tek tip işlem yapılmaz. Epilasyonda kılın derinliği ve ten melanin yapısı; G5 masajında ise ödem ve yağ doku dağılımı haritalandırılır.
+          </p>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Çalışma Saatleri</h4>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-            <span>Pazartesi - Cumartesi: 09:30 - 19:30<br>Pazar: Kapalı / Randevulu</span>
-          </div>
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h3 class="pillar-title">FSM Bulvarı Atmosferi</h3>
+          <p class="pillar-desc">
+            Bursa'nın en seçkin noktasında; gürültüden uzak, yalnızca sizin konforunuza odaklanmış çağdaş ve dingin bir güzellik odası.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <p class="copyright-text">© 2025 luxury by Ayşin. Tüm Hakları Saklıdır.</p>
-        <div class="signature-badge">
-          <span>Tasarım & Altyapı: <strong>DOEL DIGITAL</strong></span>
+    <!-- GALERİ / ÇALIŞMALARIMIZ -->
+    <section class="gallery-section" id="galeri">
+      <div class="gallery-header-row">
+        <div>
+          <span class="section-num">02 / ÇALIŞMA VİTRİNİ</span>
+          <h2 class="headline-huge section-title">SEANS GÜNLÜĞÜ</h2>
         </div>
+        <p style="max-width: 400px; font-size: 0.95rem; color: #555;">
+          Salonumuzda uygulanan protokollerden, konfor dolu detaylardan ve danışanlarımızın memnuniyet anlarından gerçek kareler.
+        </p>
+      </div>
+
+      <div class="gallery-mosaic">
+        <!-- 07.jpg -->
+        <div class="gallery-item g-item-1">
+          <img src="img/luxury-by-aysin/07.jpg" alt="luxury by Ayşin Çalışması" loading="lazy">
+          <span class="gallery-item-tag">ÖZEL AMBİYANS #01</span>
+        </div>
+
+        <!-- 04.jpg -->
+        <div class="gallery-item g-item-2">
+          <img src="img/luxury-by-aysin/04.jpg" alt="luxury by Ayşin Seansı" loading="lazy">
+          <span class="gallery-item-tag">EPİLASYON DİSİPLİNİ #02</span>
+        </div>
+
+        <!-- 08.jpg -->
+        <div class="gallery-item g-item-3">
+          <img src="img/luxury-by-aysin/08.jpg" alt="luxury by Ayşin Detay" loading="lazy">
+          <span class="gallery-item-tag">G5 İNCELME #03</span>
+        </div>
+
+        <!-- 05.jpg -->
+        <div class="gallery-item g-item-4">
+          <img src="img/luxury-by-aysin/05.jpg" alt="luxury by Ayşin Uygulama" loading="lazy">
+          <span class="gallery-item-tag">HASSAS UYGULAMA #04</span>
+        </div>
+
+        <!-- 06.jpg -->
+        <div class="gallery-item g-item-5">
+          <img src="img/luxury-by-aysin/06.jpg" alt="luxury by Ayşin Sonuç" loading="lazy">
+          <span class="gallery-item-tag">SEANS DETAYI #05</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANDEVU TALEP FORMU -->
+    <section class="appointment-section" id="randevu">
+      <div class="booking-wrapper">
+        <div class="booking-text-col">
+          <span class="editorial-label subtitle">KOLAY İLETİŞİM & DANIŞMA</span>
+          <h2 class="headline-huge booking-heading">
+            ÖZEL SEANSINIZI <br>
+            ŞİMDİ <br>
+            <span style="color: var(--cobalt);">PLANLAYIN.</span>
+          </h2>
+          <p class="booking-lead">
+            Formu doldurarak tercih ettiğiniz protokolü belirleyin. Sistem doğrudan randevu talebinizi yapılandırıp mesaj olarak yönlendirsin veya doğrudan salonumuzun resmi Instagram DM kanalından iletişime geçin.
+          </p>
+
+          <div class="direct-dm-box">
+            <div class="dm-info-left">
+              <strong>INSTAGRAM DM HATTI</strong>
+              <span>@luxuryguzelliksalonu &bull; 8.651 Takipçi</span>
+            </div>
+            <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" class="btn-compact btn-cobalt">
+              DM GÖNDER
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3 class="form-title">RANDEVU BİLGİLERİ</h3>
+          <form id="appointmentForm" onsubmit="handleAppointmentSubmit(event)">
+            <div class="form-group">
+              <label for="clientName" class="form-label">Adınız Soyadınız *</label>
+              <input type="text" id="clientName" class="form-control" placeholder="Örn: Ayşe Yılmaz" required>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="clientPhone" class="form-label">Telefon Numaranız *</label>
+                <input type="tel" id="clientPhone" class="form-control" placeholder="05XX XXX XX XX" required>
+              </div>
+
+              <div class="form-group">
+                <label for="serviceType" class="form-label">İlgilenilen Hizmet *</label>
+                <select id="serviceType" class="form-control select-control" required>
+                  <option value="" disabled selected>Hizmet Seçiniz</option>
+                  <option value="Kişiye Özel Epilasyon Protokolü">Epilasyon Protokolü (30 dk)</option>
+                  <option value="Bölgesel İncelme & G5 Masajı">Bölgesel İncelme & G5 (40 dk)</option>
+                  <option value="Genel Konsültasyon & Ön Görüşme">Genel Konsültasyon & Analiz</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredDate" class="form-label">Tercih Edilen Gün & Saat Dilimi</label>
+              <input type="text" id="preferredDate" class="form-control" placeholder="Örn: Hafta içi öğleden sonra / Cumartesi 14:00">
+            </div>
+
+            <div class="form-group">
+              <label for="clientNote" class="form-label">Ek Not / Cilt veya Bölge Durumu</label>
+              <textarea id="clientNote" class="form-control" rows="3" placeholder="Belirtmek istediğiniz hassasiyet veya seans geçmişi..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <span>RANDEVU MESAJINI HAZIRLA</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+            <p style="font-size: 0.75rem; color: #777; margin-top: 0.75rem; text-align: center;">
+              * Mesajınız WhatsApp veya DM üzerinden iletilmek üzere tek tıkla yapılandırılır.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <div class="headline-huge footer-huge-logo">
+          luxury <span>by ayşin</span>
+        </div>
+        <p class="footer-bio">
+          luxury by Ayşin — Bursa FSM Bulvarı'nda epilasyon ve bölgesel incelme alanlarında yüksek disiplinli, hijyenik ve bilimsel temelli güzellik seansları.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">İLETİŞİM & KONUM</h4>
+        <ul class="footer-list">
+          <li><strong>Konum:</strong> Bursa / FSM Bulvarı</li>
+          <li><strong>Bölge:</strong> Nilüfer / BURSA</li>
+          <li><strong>Sosyal Medya:</strong> @luxuryguzelliksalonu</li>
+          <li><strong>Kategori:</strong> Güzellik & Vücut Bakımı</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">RESMİ KANALLAR</h4>
+        <ul class="footer-list">
+          <li>
+            <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" style="color: var(--peach); font-weight: 700;">
+              &rarr; Instagram Resmi Sayfası
+            </a>
+          </li>
+          <li><span style="color: #888;">8.651 Takipçi &bull; 440 Paylaşım</span></li>
+          <li><a href="#hizmetler">&rarr; Uygulanan Protokoller</a></li>
+          <li><a href="#randevu">&rarr; Randevu Talep Paneli</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; <span id="currentYear"></span> luxury by Ayşin. Tüm hakları saklıdır. Bursa, Türkiye.
+      </div>
+      <div>
+        <span class="doel-badge">
+          DESIGNED BY <span>DOEL DIGITAL</span>
+        </span>
       </div>
     </div>
   </footer>
 
-  <!-- INTERACTIVE MODAL -->
-  <div class="custom-modal" id="redirectModal">
-    <div class="modal-box">
-      <span class="modal-close-x" onclick="closeModal()">&times;</span>
-      <div class="modal-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <h4 class="modal-title">Talebiniz Hazırlandı</h4>
-      <p class="modal-desc" id="modalDescription">
-        Randevu metniniz panonuza kopyalandı. Instagram DM penceresi açıldığında mesajınızı doğrudan yapıştırabilirsiniz.
-      </p>
-      <a href="https://www.instagram.com/luxuryguzelliksalonu/" target="_blank" rel="noopener noreferrer" class="modal-btn" onclick="closeModal()">
-        Instagram DM'yi Aç
-      </a>
-    </div>
-  </div>
+  <!-- MOBİL HIZLI İLETİŞİM BUTONU -->
+  <a href="#randevu" class="mobile-float-cta" aria-label="Hızlı Randevu">
+    <span>RANDEVU AL</span>
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </a>
 
   <script>
-    function selectServiceAndScroll(serviceName) {
-      const selectElem = document.getElementById('serviceSelect');
+    // Dinamik Yıl
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Hizmet Seçim Butonu Aksiyonu
+    function selectService(serviceName) {
+      const selectElem = document.getElementById('serviceType');
       if (selectElem) {
         for (let i = 0; i < selectElem.options.length; i++) {
-          if (selectElem.options[i].text.includes(serviceName) || selectElem.options[i].value.includes(serviceName)) {
+          if (selectElem.options[i].value.includes(serviceName) || selectElem.options[i].text.includes(serviceName)) {
             selectElem.selectedIndex = i;
             break;
           }
         }
       }
-      const bookingSection = document.getElementById('randevu');
-      if (bookingSection) {
-        bookingSection.scrollIntoView({ behavior: 'smooth' });
-      }
     }
 
-    function handleFormSubmit(e) {
-      e.preventDefault();
+    // Randevu Formu Yönlendirmesi
+    function handleAppointmentSubmit(event) {
+      event.preventDefault();
+
       const name = document.getElementById('clientName').value.trim();
       const phone = document.getElementById('clientPhone').value.trim();
-      const service = document.getElementById('serviceSelect').value;
-      const time = document.getElementById('prefTime').value;
-      const note = document.getElementById('clientNote').value.trim();
+      const service = document.getElementById('serviceType').value;
+      const date = document.getElementById('preferredDate').value.trim() || 'Fark etmez / İlk müsaitlik';
+      const note = document.getElementById('clientNote').value.trim() || 'Belirtilmedi';
 
-      const message = `Merhaba luxury by Ayşin, web siteniz üzerinden randevu talebi iletmek istiyorum:
-• Danışan: ${name}
-• Telefon: ${phone}
-• Hizmet: ${service}
-• Tercih Edilen Zaman: ${time}
-${note ? '• Ek Not: ' + note : ''}`;
+      const messageText = `Merhaba Luxury by Ayşin Salonu,\nWeb siteniz üzerinden yeni randevu talebi oluşturmak istiyorum:\n\n• İsim: ${name}\n• Telefon: ${phone}\n• Seçilen Hizmet: ${service}\n• Tercih Edilen Zaman: ${date}\n• Danışan Notu: ${note}\n\nFSM Bulvarı şubenizde müsaitlik durumu hakkında bilgi alabilir miyim?`;
 
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(message).catch(function() {});
-      }
-
-      const modal = document.getElementById('redirectModal');
-      const modalDesc = document.getElementById('modalDescription');
-      modalDesc.innerHTML = `<strong>Sn. ${name}</strong>, randevu talebiniz hazırlandı ve kopyalandı.<br><br>Instagram hesabımıza yönlendiriliyorsunuz. Mesajı DM kutusuna yapıştırarak hızlıca onay alabilirsiniz.`;
-      modal.classList.add('active');
-
-      setTimeout(function() {
-        window.open('https://www.instagram.com/luxuryguzelliksalonu/', '_blank');
-      }, 1400);
+      const encodedMsg = encodeURIComponent(messageText);
+      
+      // WhatsApp doğrudan API URL'i
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMsg}`;
+      
+      // Yeni sekmede WhatsApp yönlendirmesi
+      window.open(whatsappUrl, '_blank');
     }
-
-    function closeModal() {
-      const modal = document.getElementById('redirectModal');
-      modal.classList.remove('active');
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('redirectModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
   </script>
 </body>
 </html>

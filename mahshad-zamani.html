@@ -1,83 +1,1349 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahshad Zamani | Güzellik Salonu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahshad Zamani — Kişisel Bakım & Güzellik Atölyesi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #f6efe6; --surface: #fff; --ink: #241a17; --muted: #97816d; --accent: #b3562f; --plum: #43242e; --border: #e9dcc9; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
-    h1, h2, .disp { font-family: Sora, Inter, sans-serif; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-    header.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(67,36,46,.8); backdrop-filter: blur(14px); }
-    .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
-    .brand { color: #fff; font-weight: 700; } .brand small { display: block; font-size: 10.5px; letter-spacing: 2.5px; color: #e8b48a; text-transform: uppercase; font-weight: 400; }
-    .btn { display: inline-block; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 14px; }
-    .btn-hot { background: var(--accent); color: #fff; } .btn-ghostw { border: 1.5px solid rgba(255,255,255,.6); color: #fff; }
-    .btn-ghostd { border: 1.5px solid var(--ink); color: var(--ink); }
-    .btn-sm { padding: 10px 22px; font-size: 13.5px; }
-    .hero { background: var(--plum); color: #fff; padding: 150px 0 0; overflow: hidden; }
-    .hero .grid2 { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; }
-    .eyebrow { display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 7px 16px; border-radius: 999px; margin-bottom: 18px; }
-    .hero h1 { font-size: clamp(38px, 5.5vw, 66px); line-height: 1.06; margin: 0 0 12px; font-weight: 800; }
-    .hero .loc { opacity: .8; margin-bottom: 20px; }
-    .stats { display: flex; gap: 26px; margin: 4px 0 28px; } .stats b { display: block; font-size: 26px; } .stats span { font-size: 12.5px; opacity: .7; }
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-    .hero img.main { width: 100%; height: 480px; object-fit: cover; border-radius: 22px 22px 0 0; display: block; }
-    section { padding: 70px 0 10px; }
-    h2.sec { font-size: clamp(30px, 4vw, 46px); margin: 0 0 8px; letter-spacing: -1px; }
-    p.sub { color: var(--muted); margin: 0 0 32px; font-size: 17px; }
-    .num-list { display: flex; flex-direction: column; gap: 14px; }
-    .num-card { display: grid; grid-template-columns: 90px 150px 1fr auto; gap: 20px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 14px 22px 14px 14px; }
-    .num-card .n { font-family: Sora, sans-serif; font-weight: 800; font-size: 40px; color: var(--accent); opacity: .9; text-align: center; }
-    .num-card img { width: 150px; height: 110px; object-fit: cover; border-radius: 12px; }
-    .num-card .meta { display: flex; gap: 8px; margin-bottom: 4px; font-size: 11px; align-items: center; }
-    .num-card .badge { background: #ffeae1; color: var(--accent); padding: 2px 7px; border-radius: 5px; font-weight: 700; text-transform: uppercase; }
-    .num-card .dur { color: var(--muted); }
-    .num-card h3 { margin: 0 0 4px; font-size: 20px; } .num-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
-    .num-card a { font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
-    .split img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; border-radius: 20px; }
-    .split .txt { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 34px; font-size: 17.5px; }
-    .gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
-    .gallery img { width: 100%; height: 240px; object-fit: cover; border-radius: 16px; }
-    .booking { background: #1f1512; color: #f6efe6; border-radius: 24px; padding: 50px 38px; margin: 70px 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .booking h2 { margin: 0 0 10px; font-size: clamp(28px, 3.5vw, 40px); letter-spacing: -1px; }
-    .booking form { display: flex; flex-direction: column; gap: 12px; }
-    .booking input, .booking select { padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.07); color: #fff; font-size: 15px; font-family: inherit; }
-    .booking input::placeholder { color: rgba(255,255,255,.6); } .booking select option { color: #222; }
-    .booking button { background: var(--accent); color: #fff; border: none; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; }
-    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 20px 46px; }
-    @media (max-width: 860px) { .hero .grid2, .split, .booking { grid-template-columns: 1fr; } .num-card { grid-template-columns: 60px 1fr; } .num-card img, .num-card a { display: none; } .gallery { grid-template-columns: 1fr 1fr; } }
+    :root {
+      --bg-base: #F9F7F2;
+      --bg-card: #FFFFFF;
+      --accent-olive: #2B3A2D;
+      --accent-terracotta: #B86B53;
+      --accent-beige: #EAE3D9;
+      --accent-sand: #F2ECE1;
+      --text-main: #242220;
+      --text-muted: #6E6862;
+      --border-subtle: #E8E1D5;
+      --radius-arch: 999px 999px 24px 24px;
+      --radius-pill: 9999px;
+      --radius-sm: 14px;
+      --shadow-soft: 0 12px 35px -8px rgba(43, 58, 45, 0.08);
+      --shadow-hover: 0 20px 45px -10px rgba(184, 107, 83, 0.16);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* TYPOGRAPHY */
+    .font-serif { font-family: var(--font-serif); }
+    .font-sans { font-family: var(--font-sans); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-terracotta);
+      background-color: rgba(184, 107, 83, 0.09);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--accent-olive);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-olive);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(43, 58, 45, 0.18);
+    }
+    .btn-primary:hover {
+      background-color: var(--accent-terracotta);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-terracotta {
+      background-color: var(--accent-terracotta);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(184, 107, 83, 0.22);
+    }
+    .btn-terracotta:hover {
+      background-color: var(--accent-olive);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--accent-olive);
+      color: var(--accent-olive);
+      background-color: transparent;
+    }
+    .btn-outline:hover {
+      background-color: var(--accent-olive);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* HEADER */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background-color: rgba(249, 247, 242, 0.88);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      color: var(--accent-olive);
+      line-height: 1;
+    }
+    .brand-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-terracotta);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .status-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      color: var(--accent-olive);
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .ig-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-olive);
+      transition: var(--transition);
+    }
+    .ig-btn:hover {
+      border-color: var(--accent-terracotta);
+      color: var(--accent-terracotta);
+      transform: translateY(-1px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3.5rem, 8vw, 6.5rem);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 5.8vw, 4.4rem);
+      line-height: 1.08;
+      font-weight: 400;
+      color: var(--accent-olive);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.015em;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-terracotta);
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .metric-item strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      line-height: 1;
+      color: var(--accent-olive);
+      font-weight: 600;
+    }
+    .metric-item span {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* HERO ARCH SHOWCASE */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .arch-frame {
+      width: 100%;
+      max-width: 420px;
+      height: 520px;
+      border-radius: var(--radius-arch);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(43, 58, 45, 0.15);
+      border: 8px solid #FFFFFF;
+      background-color: var(--accent-sand);
+    }
+    .arch-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .arch-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: 24px;
+      left: -16px;
+      background: #FFFFFF;
+      padding: 14px 18px;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 240px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .floating-badge-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: rgba(184, 107, 83, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-terracotta);
+      flex-shrink: 0;
+    }
+    .floating-badge h5 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-olive);
+      line-height: 1.2;
+    }
+    .floating-badge p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* PHILOSOPHY / ABOUT SECTION */
+    .section-about {
+      padding: clamp(3.5rem, 7vw, 6rem) 0;
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .about-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      padding: 2.5rem 2rem;
+      border-radius: 24px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(184, 107, 83, 0.35);
+    }
+    .feature-num {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--accent-terracotta);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      opacity: 0.8;
+    }
+    .feature-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--accent-olive);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    .feature-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* SERVICES SECTION */
+    .section-services {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .services-header-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-arch);
+      padding: 1.2rem 1.2rem 2.2rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(184, 107, 83, 0.4);
+    }
+
+    .service-img-arch {
+      width: 100%;
+      height: 240px;
+      border-radius: 999px 999px 18px 18px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      position: relative;
+      background-color: var(--accent-sand);
+    }
+    .service-img-arch img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .service-card:hover .service-img-arch img {
+      transform: scale(1.06);
+    }
+
+    .service-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .service-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-terracotta);
+    }
+    .service-duration {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .service-body {
+      padding: 0 0.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--accent-olive);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+    .service-description {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.7rem;
+      flex-grow: 1;
+    }
+
+    .service-footer {
+      padding: 1.2rem 0.8rem 0;
+      border-top: 1px dashed var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .service-status {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-olive);
+    }
+
+    /* GALLERY SECTION */
+    .section-gallery {
+      padding: clamp(3.5rem, 7vw, 6rem) 0;
+      background-color: var(--accent-sand);
+    }
+
+    .gallery-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 220px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      background-color: #FFFFFF;
+    }
+    .gallery-item.tall {
+      height: 340px;
+      border-radius: var(--radius-arch);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(43,58,45,0.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* APPOINTMENT & CONTACT FORM SECTION */
+    .section-booking {
+      padding: clamp(4rem, 8vw, 7.5rem) 0;
+      position: relative;
+    }
+
+    .booking-wrapper {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 32px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .booking-info {
+      background-color: var(--accent-olive);
+      color: #FFFFFF;
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
+      position: relative;
+    }
+    .booking-info::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184, 107, 83, 0.28) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .booking-info h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+    .booking-info p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2.2rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .info-list-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.88rem;
+    }
+    .info-icon-pill {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .booking-form-pane {
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1.8rem, 4vw, 3.5rem);
+    }
+    .booking-form-pane h4 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--accent-olive);
+      margin-bottom: 0.5rem;
+    }
+    .booking-form-pane .form-lead {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-olive);
+      margin-bottom: 0.45rem;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: var(--text-main);
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent-terracotta);
+      background-color: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(184, 107, 83, 0.12);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      color: var(--accent-olive);
+      margin-bottom: 0.4rem;
+    }
+    .footer-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      max-width: 420px;
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .footer-nav a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent-olive);
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover {
+      color: var(--accent-terracotta);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .footer-credit {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent-olive);
+    }
+
+    /* FLOATING QUICK APPOINTMENT BAR (MOBILE) */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 10px 14px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 10px 30px rgba(43, 58, 45, 0.2);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      transition: var(--transition);
+    }
+    .mobile-sticky-info {
+      display: flex;
+      flex-direction: column;
+      padding-left: 6px;
+    }
+    .mobile-sticky-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-olive);
+      line-height: 1.2;
+    }
+    .mobile-sticky-sub {
+      font-size: 0.68rem;
+      color: var(--accent-terracotta);
+      font-weight: 500;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (min-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .gallery-item.tall {
+        height: 380px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .status-badge {
+        display: inline-flex;
+      }
+      .services-header-wrap {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .booking-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+      }
+      .mobile-sticky-bar {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="top"><div class="wrap">
-    <div class="brand">Mahshad Zamani<small>Güzellik Salonu</small></div>
-    <a class="btn btn-ghostw btn-sm" href="https://www.instagram.com/mahshad___zamani/">Instagram</a>
-  </div></header>
-  <div class="hero"><div class="wrap"><div class="grid2">
-    <div>
-      <span class="eyebrow">Güzellik Salonu </span>
-      <h1>Mahshad <em>Zamani</em></h1>
-      <div class="loc"></div>
-      <div class="stats"><div><b>15</b><span>paylaşım</span></div><div><b>1.045</b><span>takipçi</span></div><div><b>0</b><span>hizmet</span></div></div>
-      <div class="cta-row"><a class="btn btn-ghostw" href="https://www.instagram.com/mahshad___zamani/">Instagram Profili</a></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo">
+        <span class="brand-name">Mahshad Zamani</span>
+        <span class="brand-tag">Atölye &bull; Estetik &bull; Bakım</span>
+      </a>
+
+      <div class="header-actions">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Butik Randevu Açık</span>
+        </div>
+        <a href="https://www.instagram.com/mahshad___zamani/" target="_blank" rel="noopener noreferrer" class="ig-btn" aria-label="Instagram Profili">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@mahshad___zamani</span>
+        </a>
+      </div>
     </div>
-    <div><img class="main" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Mahshad Zamani"></div>
-  </div></div></div>
-  <div class="wrap">
-    <section><h2 class="sec">Hizmetlerimiz</h2><p class="sub">Hizmet detayları için bize ulaşın.</p><div class="num-list"><div class="num-card"><div class="n">01</div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Salon" loading="lazy"><div><h3>Kişiye Özel Randevulu Hizmet</h3><p>Detaylı bilgi ve randevu için bize ulaşabilirsiniz.</p></div><a href="https://www.instagram.com/mahshad___zamani/">Randevu Al →</a></div></div></section>
-    <section><h2 class="sec">Bizi tanıyın</h2><div class="split" style="margin-top:26px"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Mahshad Zamani"><div class="txt">Mahshad Zamani — Instagram üzerinden hizmet veren işletme (profil gizli).</div></div></section>
-    <section><h2 class="sec">Galeri</h2><p class="sub">Devamı Instagram profilimizde.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"></div></section>
-    <div class="booking"><div><h2>Hemen randevu alın</h2><p>Hizmetler ve müsaitlik için hemen yazın — aynı gün dönüş yapıyoruz.</p><div></div></div>
-      <form onsubmit="return sendBooking(event)"><input id="bk-name" placeholder="Adınız Soyadınız" required><input id="bk-phone" placeholder="Telefonunuz (05__ ___ __ __)" required><select id="bk-service"><option>Genel randevu</option></select><button type="submit">Randevu Talebi Gönder</button></form>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Kişiye Özel Butik Güzellik Deneyimi
+        </span>
+        <h1 class="hero-title">
+          Zarafeti ve Doğallığı <em>Kireçtaşı Dinginliğinde</em> Yeniden Keşfedin.
+        </h1>
+        <p class="hero-desc">
+          Mahshad Zamani Atölyesi; standart kalıplardan uzak, yüz mimarinize ve ten dokunuza özel olarak tasarlanan birebir güzellik ve bakım ritüelleri sunar.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#randevu" class="btn btn-primary">
+            <span>Özel Randevu Planla</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#hizmetler" class="btn btn-outline">
+            Ritüelleri İncele
+          </a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <strong>%100</strong>
+            <span>Birebir İlgi</span>
+          </div>
+          <div class="metric-item">
+            <strong>1.045+</strong>
+            <span>Estetik Takipçisi</span>
+          </div>
+          <div class="metric-item">
+            <strong>Steril</strong>
+            <span>Klinik Standart</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="arch-frame">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80" alt="Mahshad Zamani Cilt Bakımı ve Estetik">
+        </div>
+        <div class="floating-badge">
+          <div class="floating-badge-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h5>Kişiselleştirilmiş Bakım</h5>
+            <p>Sadece randevu ile tek konuk kabulü</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- PHILOSOPHY / ABOUT SECTION -->
+  <section class="section-about" id="hakkimizda">
+    <div class="container">
+      <div class="about-header">
+        <span class="eyebrow">Atölye Felsefesi</span>
+        <h2 class="section-title">Dingin Bir Akdeniz Esintisi, Saf Detaylar</h2>
+        <p class="section-subtitle">
+          Güzelliği karmaşık operasyonlarda değil; dengeli formlarda, derinlemesine temizlenmiş taze dokularda ve kusursuz hijyen standartlarında arıyoruz.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-num">01</span>
+          <h3 class="feature-title">Medikal Hijyen & Sterilizasyon</h3>
+          <p class="feature-desc">
+            Kullandığımız her bir ekipman medikal otoklav protokolleriyle sterilize edilir; tek kullanımlık aplikatörler ile teninize en saf temas garanti altına alınır.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-num">02</span>
+          <h3 class="feature-title">Bireysel Dokusal Analiz</h3>
+          <p class="feature-desc">
+            Hiçbir seans tek tip değildir. Randevunuz öncesinde cilt bariyeriniz, neme olan açlığı ve anatomik çizgileriniz dikkatle analiz edilerek protokoller kurulur.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-num">03</span>
+          <h3 class="feature-title">İzole & Mahrem Alan</h3>
+          <p class="feature-desc">
+            Randevunuz boyunca atölye yalnızca size ayrılır. Kalabalıktan uzak, kireçtaşı ve zeytin tonlarının huzur veren atmosferinde zaman tamamen durur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section-services" id="hizmetler">
+    <div class="container">
+      <div class="services-header-wrap">
+        <div>
+          <span class="eyebrow">İmza Hizmetler</span>
+          <h2 class="section-title">Randevulu Bakım Protokolleri</h2>
+        </div>
+        <p class="section-subtitle" style="margin-bottom: 0;">
+          Mahshad Zamani dokunuşuyla hazırlanmış, yüzünüzün doğal ışıltısını ve mimarisini öne çıkaran incelikli seanslar.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <article class="service-card">
+          <div class="service-img-arch">
+            <img src="https://images.unsplash.com/photo-1512290900672-1f5be669e46a?auto=format&fit=crop&w=700&q=80" alt="Cilt Yenileme ve Glow Bakım">
+          </div>
+          <div class="service-meta-top">
+            <span class="service-tag">Cilt Ritüeli</span>
+            <span class="service-duration">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              90 Dk
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Mineral Glow Cilt Canlandırma</h3>
+            <p class="service-description">
+              Yorgun düşmüş dokulara mineral takviyesi sağlayan, gözenekleri arındırıp cilde Akdeniz ışığı kazandıran derinlemesine besleyici kür.
+            </p>
+          </div>
+          <div class="service-footer">
+            <span class="service-status">Randevulu</span>
+            <a href="#randevu" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.78rem;">Seç</a>
+          </div>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card">
+          <div class="service-img-arch">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Kaş & Kirpik Mimarisi">
+          </div>
+          <div class="service-meta-top">
+            <span class="service-tag">Mimari Hatlar</span>
+            <span class="service-duration">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              60 Dk
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Kaş & Kirpik Mimarisi</h3>
+            <p class="service-description">
+              Yüz simetrisine kusursuz uyum sağlayan organik form tasarımı, laminasyon ve vitamin bazlı kirpik lifting uygulaması.
+            </p>
+          </div>
+          <div class="service-footer">
+            <span class="service-status">Randevulu</span>
+            <a href="#randevu" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.78rem;">Seç</a>
+          </div>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card">
+          <div class="service-img-arch">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80" alt="Derin Doku ve Gözenek Terapisi">
+          </div>
+          <div class="service-meta-top">
+            <span class="service-tag">Arındırma</span>
+            <span class="service-duration">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              75 Dk
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Derinlemesine Doku Terapisi</h3>
+            <p class="service-description">
+              Cilt elastikiyetini korumak üzere ultrasonik soyma, vakum detoksu ve hücre yenileyici bitkisel serum kombinasyonu.
+            </p>
+          </div>
+          <div class="service-footer">
+            <span class="service-status">Randevulu</span>
+            <a href="#randevu" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.78rem;">Seç</a>
+          </div>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="service-card">
+          <div class="service-img-arch">
+            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=700&q=80" alt="İmza Davet & Gelin Bakımı">
+          </div>
+          <div class="service-meta-top">
+            <span class="service-tag">Özel Gün</span>
+            <span class="service-duration">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              120 Dk
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">İmzalı Davet & Gelin Ritüeli</h3>
+            <p class="service-description">
+              En özel günleriniz öncesi cildi pürüzsüzleştiren, makyaj zeminini kristalize netliğe kavuşturan komple premium paket.
+            </p>
+          </div>
+          <div class="service-footer">
+            <span class="service-status">Randevulu</span>
+            <a href="#randevu" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.78rem;">Seç</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section-gallery" id="galeri">
+    <div class="container">
+      <div class="gallery-intro">
+        <span class="eyebrow">Görsel Günlük</span>
+        <h2 class="section-title">Atölye Yansımaları & Detaylar</h2>
+        <p class="section-subtitle">
+          Her ayrıntısında kireçtaşının zarafetini barındıran salon ortamımız ve kusursuz bakım sonuçlarımızdan seçkiler.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item tall">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Atölye Atmosferi">
+          <div class="gallery-overlay">Dingin Akdeniz Dokusu</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80" alt="Doğal Yüz Detayı">
+          <div class="gallery-overlay">Doğal Form & Işıltı</div>
+        </div>
+        <div class="gallery-item tall">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Kişiye Özel Cilt Analizi">
+          <div class="gallery-overlay">Hassas Analiz & Bakım</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1608248597359-0a56e6db4751?auto=format&fit=crop&w=800&q=80" alt="Doğal Özler ve Yağlar">
+          <div class="gallery-overlay">Saf İçerikler</div>
+        </div>
+        <div class="gallery-item tall">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Bakım Alanı ve Sterilizasyon">
+          <div class="gallery-overlay">İzole Stüdyo Alanı</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" alt="Estetik ve Zarafet">
+          <div class="gallery-overlay">Kişiselleştirilmiş Güzellik</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT / CONTACT SECTION -->
+  <section class="section-booking" id="randevu">
+    <div class="container">
+      <div class="booking-wrapper">
+        <div class="booking-info">
+          <span class="eyebrow" style="background-color: rgba(255,255,255,0.15); color: #FFFFFF;">Rezervasyon</span>
+          <h3>Teninize Hak Ettiği Zamanı Ayırın</h3>
+          <p>
+            Randevu talebinizi ilettiğinizde, uygun seans saatleri ve size özel hazırlık detayları Instagram / WhatsApp üzerinden hızlıca netleştirilecektir.
+          </p>
+
+          <ul class="info-list">
+            <li class="info-list-item">
+              <div class="info-icon-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div>
+                <strong>Instagram:</strong> @mahshad___zamani
+              </div>
+            </li>
+            <li class="info-list-item">
+              <div class="info-icon-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <strong>Konsept:</strong> Kişiye Özel Butik Hizmet
+              </div>
+            </li>
+            <li class="info-list-item">
+              <div class="info-icon-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <strong>Çalışma:</strong> Salı – Pazar / Randevulu
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="booking-form-pane">
+          <h4>Randevu Talep Formu</h4>
+          <p class="form-lead">Bilgilerinizi doldurun; talebiniz anında doğrudan yetkiliye yönlendirilsin.</p>
+
+          <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="clientName">Adınız Soyadınız</label>
+              <input type="text" id="clientName" class="form-input" placeholder="Örn: Ela Karahan" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientPhone">Telefon Numaranız</label>
+              <input type="tel" id="clientPhone" class="form-input" placeholder="05XX XXX XX XX" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientService">İstediğiniz Hizmet</label>
+              <select id="clientService" class="form-select" required>
+                <option value="" disabled selected>Hizmet Seçiniz...</option>
+                <option value="Mineral Glow Cilt Canlandırma (90 Dk)">Mineral Glow Cilt Canlandırma (90 Dk)</option>
+                <option value="Kaş & Kirpik Mimarisi (60 Dk)">Kaş & Kirpik Mimarisi (60 Dk)</option>
+                <option value="Derinlemesine Doku Terapisi (75 Dk)">Derinlemesine Doku Terapisi (75 Dk)</option>
+                <option value="İmzalı Davet & Gelin Ritüeli (120 Dk)">İmzalı Davet & Gelin Ritüeli (120 Dk)</option>
+                <option value="Genel Konsültasyon ve Özel Bakım">Genel Konsültasyon ve Özel Bakım</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="clientNote">Tercih Edilen Tarih veya Özel Not</label>
+              <textarea id="clientNote" class="form-textarea" placeholder="Hafta içi öğleden sonra vb. notlarınızı yazabilirsiniz..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-terracotta" style="width: 100%;">
+              <span>Randevu Mesajını Hazırla & İlet</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">Mahshad Zamani</div>
+        <p class="footer-sub">
+          Akdeniz sadeliğini ve doğal zarafeti temel alan, randevulu kişisel bakım ve güzellik atölyesi.
+        </p>
+
+        <ul class="footer-nav">
+          <li><a href="#hakkimizda">Felsefemiz</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#randevu">Randevu Al</a></li>
+          <li><a href="https://www.instagram.com/mahshad___zamani/" target="_blank" rel="noopener noreferrer">Instagram (@mahshad___zamani)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="currentYear"></span> Mahshad Zamani. Tüm Hakları Saklıdır.</div>
+        <div class="footer-credit">
+          Designed by <strong>DOEL DIGITAL</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE FLOATING ACTION BAR -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-sticky-info">
+      <span class="mobile-sticky-title">Mahshad Zamani</span>
+      <span class="mobile-sticky-sub">Randevulu Özel Bakım</span>
+    </div>
+    <a href="#randevu" class="btn btn-terracotta" style="padding: 8px 18px; font-size: 0.78rem;">
+      Hemen Başvur
+    </a>
   </div>
-  <footer>Mahshad Zamani · Güzellik Salonu<br>Bu sayfa DOEL DIGITAL tarafından hazırlanan ücretsiz önizlemedir.</footer>
-  <script>const WA_PHONE="";const IG_URL="https://www.instagram.com/mahshad___zamani/";function sendBooking(e){e.preventDefault();const n=document.getElementById('bk-name').value.trim();const p=document.getElementById('bk-phone').value.trim();const s=document.getElementById('bk-service').value;const msg=encodeURIComponent(`Merhaba, ben ${n} (${p}). ${s} için randevu almak istiyorum.`);if(WA_PHONE){window.open(`https://wa.me/${WA_PHONE}?text=${msg}`,'_blank');}else{window.open(IG_URL,'_blank');}return false;}</script>
+
+  <!-- SCRIPT -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const service = document.getElementById('clientService').value;
+      const note = document.getElementById('clientNote').value.trim();
+
+      const messageText = `Merhaba Mahshad Zamani Atölyesi,\n\nRandevu talebinde bulunmak istiyorum:\n• Ad Soyad: ${name}\n• Telefon: ${phone}\n• Seçilen Hizmet: ${service}\n• Not/Tercih Edilen Gün: ${note || 'Belirtilmedi'}\n\nUygun seans saatleri hakkında bilgi alabilir miyim?`;
+
+      const instagramProfileUrl = 'https://www.instagram.com/mahshad___zamani/';
+      
+      // Kopyalama ve yönlendirme feedback'i
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(messageText).then(() => {
+          alert('Randevu talep metniniz hazırlandı ve panoya kopyalandı! Instagram profiline yönlendiriliyorsunuz. DM üzerinden tek dokunuşla yapıştırıp iletebilirsiniz.');
+          window.open(instagramProfileUrl, '_blank');
+        }).catch(() => {
+          window.open(instagramProfileUrl, '_blank');
+        });
+      } else {
+        window.open(instagramProfileUrl, '_blank');
+      }
+    }
+
+    // Yumuşak geçişli navigasyon linkleri kontrolü
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId !== '#') {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

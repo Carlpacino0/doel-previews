@@ -1,87 +1,1693 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniela Mell | Güzellik Salonu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniela Mell — Modernist Kişisel Bakım & Güzellik Stüdyosu</title>
+  <meta name="description" content="Daniela Mell: Kişiselleştirilmiş çağdaş estetik, radikal cilt bakımı ve birebir randevulu güzellik mimarisi.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #141114; --surface: #1e1a1e; --ink: #f5efe8; --muted: #b9a89c; --accent: #d3a75f; --line: #332b32; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
-    h1, h2, h3, .serif { font-family: "Playfair Display", Georgia, serif; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-    header.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(20,17,20,.7); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-    .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
-    .brand { font-weight: 600; font-size: 17px; letter-spacing: .4px; }
-    .brand small { display: block; font-size: 10.5px; letter-spacing: 2.5px; color: var(--accent); text-transform: uppercase; }
-    .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 28px; border-radius: 999px; }
-    .btn-gold { background: linear-gradient(135deg, #e0b96f, #b3813c); color: #1a1214; }
-    .btn-ghost { border: 1px solid rgba(255,255,255,.4); color: #fff; }
-    .btn-sm { padding: 9px 20px; font-size: 13.5px; }
-    .hero { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 100vh; align-items: stretch; padding-top: 60px; }
-    .hero .txt { display: flex; flex-direction: column; justify-content: center; padding: 60px 40px 60px 0; }
-    .eyebrow { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
-    .hero h1 { font-size: clamp(42px, 6vw, 74px); line-height: 1.04; margin: 0 0 14px; }
-    .hero h1 em { color: var(--accent); }
-    .hero .loc { color: var(--muted); margin-bottom: 22px; }
-    .stats { display: flex; gap: 28px; margin: 6px 0 30px; }
-    .stats b { display: block; font-size: 24px; } .stats span { font-size: 12.5px; color: var(--muted); }
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-    .hero .ph { position: relative; min-height: 420px; }
-    .hero .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 0%, transparent 30%); }
-    section { padding: 80px 0 10px; }
-    .kicker { color: var(--accent); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
-    h2.sec { font-size: clamp(30px, 4vw, 46px); margin: 8px 0 10px; }
-    p.sub { color: var(--muted); margin: 0 0 36px; font-size: 17px; max-width: 560px; }
-    .svc { display: flex; gap: 22px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin-bottom: 16px; text-align: left; }
-    .svc img { width: 150px; height: 150px; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
-    .svc-meta { display: flex; gap: 10px; margin-bottom: 6px; font-size: 12px; align-items: center; }
-    .svc-meta .badge { background: rgba(211, 167, 95, 0.18); color: var(--accent); padding: 3px 8px; border-radius: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
-    .svc-meta .dur { color: var(--muted); }
-    .svc h3 { margin: 0 0 6px; font-size: 22px; } .svc p { margin: 0 0 10px; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
-    .svc a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14.5px; }
-    .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; align-items: center; }
-    .about img { width: 100%; height: 420px; object-fit: cover; border-radius: 20px; }
-    .about .txt { font-size: 18px; color: var(--ink); }
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .gallery img { width: 100%; height: 230px; object-fit: cover; border-radius: 14px; }
-    .gallery img:first-child { grid-row: span 2; height: 472px; }
-    .booking { background: linear-gradient(135deg, #e0b96f, #b3813c); color: #1a1214; border-radius: 24px; padding: 52px 40px; margin: 80px 0 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
-    .booking h2 { margin: 0 0 10px; font-size: clamp(28px, 3.5vw, 40px); }
-    .booking form { display: flex; flex-direction: column; gap: 12px; }
-    .booking input, .booking select { padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(0,0,0,.2); background: rgba(255,255,255,.85); font-size: 15px; font-family: inherit; }
-    .booking button { background: #1a1214; color: #fff; border: none; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; }
-    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 34px 20px 48px; }
-    @media (max-width: 820px) { .hero, .about, .booking { grid-template-columns: 1fr; } .hero .ph { min-height: 320px; order: -1; } .gallery { grid-template-columns: repeat(2, 1fr); } }
+    :root {
+      --bg: #EFECE6;
+      --dark: #161616;
+      --white: #FFFFFF;
+      --cobalt: #1A44ED;
+      --peach: #FF6F59;
+      --line: rgba(22, 22, 22, 0.15);
+      --line-dark: rgba(239, 236, 230, 0.18);
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--dark);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: var(--bg);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* TYPOGRAPHY */
+    .display-1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 8vw, 7rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+
+    .display-2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+    }
+
+    .display-outline {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--dark);
+      transition: all 0.3s ease;
+    }
+
+    .display-outline-white {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--white);
+    }
+
+    /* TICKER / MARQUEE */
+    .marquee-container {
+      background: var(--dark);
+      color: var(--bg);
+      padding: 12px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 2px solid var(--cobalt);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 24s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-right: 2rem;
+    }
+
+    .marquee-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--peach);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1.5px solid var(--line);
+      background: rgba(239, 236, 230, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.4rem;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-badge {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: var(--cobalt);
+      color: var(--white);
+      padding: 3px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .btn-header-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 0;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--dark);
+    }
+
+    .btn-header-ig:hover {
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--cobalt);
+      color: var(--white);
+      padding: 18px 34px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 2px solid var(--cobalt);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.25s ease;
+      box-shadow: 6px 6px 0 var(--dark);
+    }
+
+    .btn-primary:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 9px 9px 0 var(--dark);
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--dark);
+      padding: 16px 28px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 2px solid var(--dark);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      border-bottom: 2px solid var(--dark);
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 24px 72px 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1.5px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(22, 22, 22, 0.7);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-title-group {
+      margin-bottom: 36px;
+    }
+
+    .hero-title-group .sub-kicker {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 800;
+      background: var(--peach);
+      color: var(--dark);
+      padding: 4px 12px;
+      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: #333333;
+      max-width: 540px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .hero-media-wrapper {
+      position: relative;
+      min-height: 480px;
+    }
+
+    .hero-media-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid var(--dark);
+      box-shadow: 12px 12px 0 var(--cobalt);
+      background: var(--dark);
+    }
+
+    .hero-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(15%) contrast(105%);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-media-frame:hover img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+
+    .hero-float-stamp {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--dark);
+      color: var(--white);
+      padding: 16px 20px;
+      border: 2px solid var(--white);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+      max-width: 200px;
+      z-index: 2;
+    }
+
+    .hero-float-stamp .stamp-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--peach);
+      line-height: 1;
+    }
+
+    .hero-float-stamp .stamp-text {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* METRIC ROW */
+    .metrics-bar {
+      border-bottom: 2px solid var(--dark);
+      background: var(--white);
+    }
+
+    .metrics-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .metric-box {
+      padding: 36px 28px;
+      border-right: 1.5px solid var(--line);
+      position: relative;
+      transition: background 0.2s ease;
+    }
+
+    .metric-box:last-child {
+      border-right: none;
+    }
+
+    .metric-box:hover {
+      background: rgba(26, 68, 237, 0.04);
+    }
+
+    .metric-number {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .metric-number span {
+      color: var(--cobalt);
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #666;
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      border-bottom: 2px solid var(--dark);
+      padding-bottom: 24px;
+    }
+
+    .section-tag {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cobalt);
+      margin-bottom: 8px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 2px solid var(--dark);
+      box-shadow: 8px 8px 0 var(--dark);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0 var(--cobalt);
+    }
+
+    .service-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      border-bottom: 1.5px solid var(--line);
+      padding-bottom: 16px;
+    }
+
+    .service-index {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--cobalt);
+    }
+
+    .service-duration-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--bg);
+      border: 1px solid var(--dark);
+      padding: 4px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.65rem;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      color: #4A4A4A;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .service-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1.5px solid var(--line);
+    }
+
+    .service-badge-cat {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--peach);
+      background: var(--dark);
+      padding: 4px 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn-service-action {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 2px solid var(--cobalt);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-service-action:hover {
+      color: var(--cobalt);
+      border-color: var(--peach);
+    }
+
+    /* PHILOSOPHY / DARK BLOCK */
+    .philosophy-section {
+      background: var(--dark);
+      color: var(--bg);
+      position: relative;
+      overflow: hidden;
+      padding: 110px 24px;
+      border-top: 2px solid var(--dark);
+      border-bottom: 2px solid var(--dark);
+    }
+
+    .philosophy-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .philosophy-left {
+      position: relative;
+    }
+
+    .philosophy-left-img-frame {
+      border: 2px solid var(--white);
+      box-shadow: 12px 12px 0 var(--peach);
+      position: relative;
+    }
+
+    .philosophy-left-img-frame img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+
+    .philosophy-left-img-frame:hover img {
+      filter: grayscale(0%);
+    }
+
+    .philosophy-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .philosophy-kicker {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--peach);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .philosophy-lead {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .philosophy-text {
+      color: rgba(239, 236, 230, 0.78);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .philosophy-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .pillar-item h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pillar-item h4::before {
+      content: "■";
+      color: var(--cobalt);
+      font-size: 0.8rem;
+    }
+
+    .pillar-item p {
+      font-size: 0.86rem;
+      color: rgba(239, 236, 230, 0.65);
+      line-height: 1.5;
+    }
+
+    /* GALLERY SECTION */
+    .gallery-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border: 2px solid var(--dark);
+      background: var(--dark);
+      overflow: hidden;
+      group: "";
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: grayscale(30%) contrast(105%);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%) contrast(100%);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(22,22,22,0.92) 0%, transparent 100%);
+      padding: 24px 16px 16px 16px;
+      color: var(--white);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+    .gallery-caption .caption-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .gallery-caption .caption-tag {
+      font-size: 0.7rem;
+      color: var(--peach);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Asymmetric grid placements */
+    .g-col-1 { grid-column: span 4; height: 380px; }
+    .g-col-2 { grid-column: span 4; height: 380px; }
+    .g-col-3 { grid-column: span 4; height: 380px; }
+    .g-col-4 { grid-column: span 7; height: 440px; }
+    .g-col-5 { grid-column: span 5; height: 440px; }
+
+    /* BOOKING FORM SECTION */
+    .booking-section {
+      background: var(--bg);
+      border-top: 2px solid var(--dark);
+      border-bottom: 2px solid var(--dark);
+      padding: 96px 24px;
+    }
+
+    .booking-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 3px solid var(--dark);
+      background: var(--white);
+      box-shadow: 16px 16px 0 var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+    }
+
+    .booking-info-pane {
+      background: var(--dark);
+      color: var(--bg);
+      padding: 56px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 2px solid var(--dark);
+    }
+
+    .booking-info-top h3 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .booking-info-top p {
+      font-size: 0.95rem;
+      color: rgba(239, 236, 230, 0.8);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .booking-direct-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .direct-link-card {
+      border: 1px solid var(--line-dark);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.03);
+      transition: all 0.2s ease;
+    }
+
+    .direct-link-card:hover {
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+      transform: translateX(4px);
+    }
+
+    .direct-link-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.6);
+      display: block;
+    }
+
+    .direct-link-val {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+
+    .booking-form-pane {
+      padding: 56px 48px;
+      background: var(--white);
+    }
+
+    .form-header {
+      margin-bottom: 32px;
+    }
+
+    .form-header h4 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .form-header p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      border: 2px solid var(--dark);
+      background: var(--bg);
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--dark);
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      background: var(--white);
+      border-color: var(--cobalt);
+      box-shadow: 3px 3px 0 var(--cobalt);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn-submit-ig {
+      width: 100%;
+      background: var(--dark);
+      color: var(--white);
+      border: 2px solid var(--dark);
+      padding: 16px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 4px 4px 0 var(--peach);
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit-ig:hover {
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+      box-shadow: 6px 6px 0 var(--dark);
+      transform: translate(-2px, -2px);
+    }
+
+    .btn-submit-wa {
+      width: 100%;
+      background: transparent;
+      color: var(--dark);
+      border: 2px solid var(--dark);
+      padding: 14px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit-wa:hover {
+      background: #10B981;
+      color: var(--white);
+      border-color: #10B981;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: var(--bg);
+      padding: 80px 24px 36px 24px;
+      border-top: 2px solid var(--dark);
+    }
+
+    .footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-brand h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .footer-brand p {
+      color: rgba(239, 236, 230, 0.6);
+      margin-top: 14px;
+      max-width: 380px;
+      font-size: 0.9rem;
+    }
+
+    .footer-columns {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--peach);
+      margin-bottom: 16px;
+    }
+
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-nav a {
+      font-size: 0.9rem;
+      color: rgba(239, 236, 230, 0.8);
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .footer-nav a:hover {
+      color: var(--white);
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line-dark);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: rgba(239, 236, 230, 0.55);
+    }
+
+    .doel-badge {
+      color: var(--bg);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(239, 236, 230, 0.2);
+      padding: 4px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+    }
+
+    .doel-badge:hover {
+      border-color: var(--cobalt);
+      background: var(--cobalt);
+      color: var(--white);
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .philosophy-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .booking-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .booking-info-pane {
+        border-right: none;
+        border-bottom: 2px solid var(--dark);
+      }
+      .metrics-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-box:nth-child(2) {
+        border-right: none;
+      }
+      .metric-box:nth-child(-n+2) {
+        border-bottom: 1.5px solid var(--line);
+      }
+      .g-col-1, .g-col-2, .g-col-3 {
+        grid-column: span 6;
+      }
+      .g-col-4, .g-col-5 {
+        grid-column: span 12;
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .metrics-inner {
+        grid-template-columns: 1fr;
+      }
+      .metric-box {
+        border-right: none;
+        border-bottom: 1.5px solid var(--line);
+      }
+      .metric-box:last-child {
+        border-bottom: none;
+      }
+      .g-col-1, .g-col-2, .g-col-3 {
+        grid-column: span 12;
+        height: 320px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .booking-form-pane {
+        padding: 36px 24px;
+      }
+      .booking-info-pane {
+        padding: 40px 24px;
+      }
+      .hero-media-frame {
+        min-height: 380px;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="top"><div class="wrap">
-    <div class="brand">Daniela Mell<small>Güzellik Salonu</small></div>
-    <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/d.mell.e/">Instagram</a>
-  </div></header>
-  <div class="hero">
-    <div class="txt" style="padding-left: max(24px, calc((100vw - 1120px)/2));">
-      <span class="eyebrow">Güzellik Salonu </span>
-      <h1>Daniela <em>Mell</em></h1>
-      <div class="loc"></div>
-      <div class="stats"><div><b>123</b><span>paylaşım</span></div><div><b>1.613</b><span>takipçi</span></div><div><b>0</b><span>hizmet</span></div></div>
-      <div class="cta-row"><a class="btn btn-ghost" href="https://www.instagram.com/d.mell.e/">Instagram Profili</a></div>
+
+  <!-- MARQUEE BAR -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <span>DANIELA MELL</span>
+        <span class="marquee-dot"></span>
+        <span>KİŞİYE ÖZEL ÇAĞDAŞ ESTETİK</span>
+        <span class="marquee-dot"></span>
+        <span>RANDEVULU SEANSLAR</span>
+        <span class="marquee-dot"></span>
+        <span>MODERNİST GÜZELLİK DOKTRİNİ</span>
+        <span class="marquee-dot"></span>
+        <span>STERİL & TEKİL SEANS DÜZENİ</span>
+        <span class="marquee-dot"></span>
+      </div>
+      <div class="marquee-item">
+        <span>DANIELA MELL</span>
+        <span class="marquee-dot"></span>
+        <span>KİŞİYE ÖZEL ÇAĞDAŞ ESTETİK</span>
+        <span class="marquee-dot"></span>
+        <span>RANDEVULU SEANSLAR</span>
+        <span class="marquee-dot"></span>
+        <span>MODERNİST GÜZELLİK DOKTRİNİ</span>
+        <span class="marquee-dot"></span>
+        <span>STERİL & TEKİL SEANS DÜZENİ</span>
+        <span class="marquee-dot"></span>
+      </div>
     </div>
-    <div class="ph"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Daniela Mell"></div>
   </div>
-  <div class="wrap">
-    <section><span class="kicker">Hizmetler</span><h2 class="sec">Ne yapıyoruz</h2><p class="sub">Hizmet detayları için bize ulaşın.</p><div class="svc"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Salon" loading="lazy"><div><h3>Kişiye Özel Randevulu Hizmet</h3><p>Salonumuzda tüm uygulamalar hijyenik protokollerle ve ön randevuyla gerçekleştirilir.</p></div></div></section>
-    <section><span class="kicker">Hakkımızda</span><h2 class="sec">Salonumuzdan</h2><div class="about" style="margin-top:26px"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Daniela Mell"><div class="txt">Daniela Mell — Instagram üzerinden hizmet veren işletme (profil gizli).</div></div></section>
-    <section><span class="kicker">Galeri</span><h2 class="sec">İşlerimizden kareler</h2><p class="sub">Daha fazlası Instagram profilimizde.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=65" alt="Galeri" loading="eager"></div></section>
-    <div class="booking"><div><h2>Randevu Alın</h2><p>Hizmetler ve müsaitlik için hemen yazın — aynı gün dönüş yapıyoruz.</p><div></div></div>
-      <form onsubmit="return sendBooking(event)"><input id="bk-name" placeholder="Adınız Soyadınız" required><input id="bk-phone" placeholder="Telefonunuz (05__ ___ __ __)" required><select id="bk-service"><option>Genel randevu</option></select><button type="submit">Randevu Talebi Gönder</button></form>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="brand-logo">
+        DANIELA MELL
+        <span class="brand-badge">STUDIO</span>
+      </a>
+      <div class="header-actions">
+        <div class="status-indicator">
+          <span class="status-pulse"></span>
+          <span>Rezervasyon Aktif</span>
+        </div>
+        <a href="https://www.instagram.com/d.mell.e/" target="_blank" rel="noopener noreferrer" class="btn-header-ig">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>@d.mell.e</span>
+        </a>
+      </div>
     </div>
-  </div>
-  <footer>Daniela Mell · Güzellik Salonu<br>Bu sayfa DOEL DIGITAL tarafından hazırlanan ücretsiz önizlemedir.</footer>
-  <script>const WA_PHONE="";const IG_URL="https://www.instagram.com/d.mell.e/";function sendBooking(e){e.preventDefault();const n=document.getElementById('bk-name').value.trim();const p=document.getElementById('bk-phone').value.trim();const s=document.getElementById('bk-service').value;const msg=encodeURIComponent(`Merhaba, ben ${n} (${p}). ${s} için randevu almak istiyorum.`);if(WA_PHONE){window.open(`https://wa.me/${WA_PHONE}?text=${msg}`,'_blank');}else{window.open(IG_URL,'_blank');}return false;}</script>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-meta">
+      <div>HAUTE COUTURE BAKIM SANATI</div>
+      <div>EST. VERIFIED ATELIER</div>
+    </div>
+    
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-title-group">
+          <span class="sub-kicker">KİŞİYE ÖZEL ESTETİK MİMARİSİ</span>
+          <h1 class="display-1">
+            GÜZELLİKTE<br>
+            <span class="display-outline">RADİKAL</span><br>
+            HASSASİYET
+          </h1>
+        </div>
+
+        <p class="hero-description">
+          Tekdüze güzellik standartlarını reddeden, yüz anatomisine ve kişisel dokunuşa odaklı yüksek hassasiyetli bakım protokolü. Yalnızca randevu ile, bütünüyle size ayrılmış ayrıcalıklı bir alan.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#randevu" class="btn-primary">
+            <span>RANDEVUNUZU OLUŞTURUN</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#hizmetler" class="btn-secondary">
+            <span>PROTOKOLLER</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media-wrapper">
+        <div class="hero-media-frame">
+          <img 
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" 
+            alt="Daniela Mell Stüdyo Estetik Bakımı"
+            loading="eager"
+          >
+        </div>
+        <div class="hero-float-stamp">
+          <div class="stamp-num">1:1</div>
+          <div class="stamp-text">Exclusive Özel Seans Seviyesi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS / METRICS BAR -->
+  <section class="metrics-bar">
+    <div class="metrics-inner">
+      <div class="metric-box">
+        <div class="metric-number">1.6K<span>+</span></div>
+        <div class="metric-label">Takipçi & Sadık Topluluk</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">123<span>#</span></div>
+        <div class="metric-label">Küratörlü Portföy Çalışması</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">100<span>%</span></div>
+        <div class="metric-label">Sterilizasyon Güvencesi</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">01<span>/1</span></div>
+        <div class="metric-label">Aynı Anda Yalnızca Tek Danışan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section" id="hizmetler">
+    <div class="section-header-row">
+      <div>
+        <div class="section-tag">// ÖZENLE KÜRE EDİLMİŞ SEANSLAR</div>
+        <h2 class="display-2">SERVİSLER & PROTOKOLLER</h2>
+      </div>
+      <div style="font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">
+        [ SEÇKİN KİŞİSEL BAKIM ]
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div>
+          <div class="service-card-top">
+            <span class="service-index">01</span>
+            <span class="service-duration-badge">60 - 75 DK</span>
+          </div>
+          <h3 class="service-name">HÜCRESEL DERMA GLOW TERAPİSİ</h3>
+          <p class="service-desc">
+            Cildin derin katmanlarına etki eden arındırıcı, bariyer güçlendirici ve doğal parlaklığı ortaya çıkaran yoğun besleyici medikal bakım ritüeli.
+          </p>
+        </div>
+        <div class="service-footer">
+          <span class="service-badge-cat">CİLT MİMARİSİ</span>
+          <a href="#randevu" onclick="selectService('Hücresel Derma Glow Terapisi')" class="btn-service-action">
+            SEANS TALEP ET &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div>
+          <div class="service-card-top">
+            <span class="service-index">02</span>
+            <span class="service-duration-badge">50 DK</span>
+          </div>
+          <h3 class="service-name">ARCHITECT BROW & LASH LIFT</h3>
+          <p class="service-desc">
+            Yüzün geometrisine tam oturan kaş laminasyonu, keratin botoks ve kirpik formlandırma ile derin, keskin ve zahmetsiz bakış kurgusu.
+          </p>
+        </div>
+        <div class="service-footer">
+          <span class="service-badge-cat">BAKIŞ TASARIMI</span>
+          <a href="#randevu" onclick="selectService('Architect Brow & Lash Lift')" class="btn-service-action">
+            SEANS TALEP ET &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div>
+          <div class="service-card-top">
+            <span class="service-index">03</span>
+            <span class="service-duration-badge">90 DK</span>
+          </div>
+          <h3 class="service-name">COUTURE MAKE-UP & ÖZEL GÜN</h3>
+          <p class="service-desc">
+            Kamera ışığına, gece ortamına ve tenin mikroyapısına kusursuz adapte olan kalıcı, hafif dokulu ve çağdaş vizyonlu editoryal makyaj.
+          </p>
+        </div>
+        <div class="service-footer">
+          <span class="service-badge-cat">EDİTORYAL VİZYON</span>
+          <a href="#randevu" onclick="selectService('Couture Make-Up & Özel Gün')" class="btn-service-action">
+            SEANS TALEP ET &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <div>
+          <div class="service-card-top">
+            <span class="service-index">04</span>
+            <span class="service-duration-badge">60 DK</span>
+          </div>
+          <h3 class="service-name">MEDİKAL EL & TIRNAK ESTETİĞİ</h3>
+          <p class="service-desc">
+            Kusursuz tırnak eti temizliği, anatomik formlandırma ve yüksek dayanımlı jel uygulamaları ile zamansız, rafine ve heykelsi el bakımı.
+          </p>
+        </div>
+        <div class="service-footer">
+          <span class="service-badge-cat">TIRNAK SANATI</span>
+          <a href="#randevu" onclick="selectService('Medikal El & Tırnak Estetiği')" class="btn-service-action">
+            SEANS TALEP ET &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY / MANIFESTO (DARK BLOCK) -->
+  <section class="philosophy-section" id="felsefemiz">
+    <div class="philosophy-inner">
+      <div class="philosophy-left">
+        <div class="philosophy-left-img-frame">
+          <img 
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop" 
+            alt="Daniela Mell Klinik Disiplin & Steril Estetik"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <div class="philosophy-right">
+        <div class="philosophy-kicker">// SALON MANİFESTOSU</div>
+        <h2 class="philosophy-lead">
+          KLİNİK DİSİPLİN,<br>
+          <span style="color: var(--peach);">SANAT GALERİSİ</span> ÖZENİ.
+        </h2>
+        <p class="philosophy-text">
+          Daniela Mell salonunda seri üretim yaklaşımı yoktur. Her seans, danışanın kemik yapısı, cilt tonu ve yaşam tarzı analiz edilerek kurgulanan bağımsız bir tasarım sürecidir.
+        </p>
+
+        <div class="philosophy-pillars">
+          <div class="pillar-item">
+            <h4>Birebir Gizlilik</h4>
+            <p>Seansınız esnasında salon tamamen size kapatılır; kesintisiz konfor ve mahremiyet sağlanır.</p>
+          </div>
+          <div class="pillar-item">
+            <h4>Hastane Seviyesi Hijyen</h4>
+            <p>Otoklav sterilizasyon standartları ve tek kullanımlık medikal gereçlerle sıfır risk prensibi.</p>
+          </div>
+          <div class="pillar-item">
+            <h4>Hassas Doku Uyumu</h4>
+            <p>Alerjenik olmayan, biyolojik uyumlu ve dünya standardı profesyonel dermokozmetik ürünler.</p>
+          </div>
+          <div class="pillar-item">
+            <h4>Doğrudan İletişim</h4>
+            <p>Aracı ajanslar olmadan, randevunuzun her detayını doğrudan uygulayıcınız ile koordine edersiniz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / WORKS SECTION -->
+  <section class="gallery-section" id="galeri">
+    <div class="section-header-row">
+      <div>
+        <div class="section-tag">// PORTFÖY VE ARŞİV</div>
+        <h2 class="display-2">GERÇEK ÇALIŞMALAR</h2>
+      </div>
+      <a href="https://www.instagram.com/d.mell.e/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size: 0.8rem; padding: 10px 18px;">
+        INSTAGRAM ARŞİVİ (123 POST) &nearr;
+      </a>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g-col-1">
+        <img 
+          src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop" 
+          alt="Kaş ve Kirpik Laminasyonu"
+          loading="lazy"
+        >
+        <div class="gallery-caption">
+          <span class="caption-title">BROW ARCHITECTURE</span>
+          <span class="caption-tag">LAMİNASYON</span>
+        </div>
+      </div>
+
+      <div class="gallery-item g-col-2">
+        <img 
+          src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=900&auto=format&fit=crop" 
+          alt="Ten Makyajı ve Doğal Parıltı"
+          loading="lazy"
+        >
+        <div class="gallery-caption">
+          <span class="caption-title">NATURAL COMPLEXION</span>
+          <span class="caption-tag">GLOW PROTOKOLÜ</span>
+        </div>
+      </div>
+
+      <div class="gallery-item g-col-3">
+        <img 
+          src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=900&auto=format&fit=crop" 
+          alt="Tırnak ve El Bakımı"
+          loading="lazy"
+        >
+        <div class="gallery-caption">
+          <span class="caption-title">MINIMAL NAIL ART</span>
+          <span class="caption-tag">MEDİKAL MANİKÜR</span>
+        </div>
+      </div>
+
+      <div class="gallery-item g-col-4">
+        <img 
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=900&auto=format&fit=crop" 
+          alt="Daniela Mell Salon Atmosferi"
+          loading="lazy"
+        >
+        <div class="gallery-caption">
+          <span class="caption-title">ATELIER AMBIENCE</span>
+          <span class="caption-tag">STERİL ÇALIŞMA ALANI</span>
+        </div>
+      </div>
+
+      <div class="gallery-item g-col-5">
+        <img 
+          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=900&auto=format&fit=crop" 
+          alt="Editoryal Gece Makyajı"
+          loading="lazy"
+        >
+        <div class="gallery-caption">
+          <span class="caption-title">EDITORIAL BRIDAL</span>
+          <span class="caption-tag">ÖZEL GÜN</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section class="booking-section" id="randevu">
+    <div class="booking-wrapper">
+      <!-- Left Side -->
+      <div class="booking-info-pane">
+        <div class="booking-info-top">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--peach); letter-spacing: 0.1em; display: block; margin-bottom: 12px;">// DANIELA MELL REZERVASYON</span>
+          <h3>KİŞİSEL SEANS TALEBİ</h3>
+          <p>
+            Formu doldurduğunuzda bilgileriniz tek dokunuşla doğrudan Instagram DM veya WhatsApp mesajı formatına getirilir. Tercih ettiğiniz kanal ile anında teyit alırsınız.
+          </p>
+        </div>
+
+        <div class="booking-direct-links">
+          <a href="https://ig.me/m/d.mell.e" target="_blank" rel="noopener noreferrer" class="direct-link-card">
+            <div>
+              <span class="direct-link-label">Resmi Instagram Hesabı</span>
+              <span class="direct-link-val">@d.mell.e</span>
+            </div>
+            <span>&nearr;</span>
+          </a>
+
+          <div class="direct-link-card" style="border-left: 3px solid var(--peach);">
+            <div>
+              <span class="direct-link-label">Hizmet Türü</span>
+              <span class="direct-link-val">Randevulu & Özel Seans</span>
+            </div>
+            <span style="color: var(--peach);">●</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="booking-form-pane">
+        <div class="form-header">
+          <h4>RANDEVU BİLGİLERİNİZİ GİRİN</h4>
+          <p>Tüm alanları eksiksiz doldurunuz.</p>
+        </div>
+
+        <form id="appointmentForm" onsubmit="event.preventDefault(); submitToInstagram();">
+          <div class="form-group">
+            <label class="form-label" for="clientName">ADINIZ SOYADINIZ *</label>
+            <input type="text" id="clientName" class="form-input" placeholder="Örn. Selin Yılmaz" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="clientPhone">TELEFON VEYA INSTAGRAM *</label>
+              <input type="text" id="clientPhone" class="form-input" placeholder="05XX... veya @hesabiniz" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="clientDate">TERCİH EDİLEN GÜN</label>
+              <input type="date" id="clientDate" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="serviceSelect">TALEP EDİLEN HİZMET *</label>
+            <select id="serviceSelect" class="form-select" required>
+              <option value="" disabled selected>Hizmet Seçiniz...</option>
+              <option value="Hücresel Derma Glow Terapisi">Hücresel Derma Glow Terapisi (60-75 Dk)</option>
+              <option value="Architect Brow & Lash Lift">Architect Brow & Lash Lift (50 Dk)</option>
+              <option value="Couture Make-Up & Özel Gün">Couture Make-Up & Özel Gün (90 Dk)</option>
+              <option value="Medikal El & Tırnak Estetiği">Medikal El & Tırnak Estetiği (60 Dk)</option>
+              <option value="Özel Analiz & Çoklu Seans Danışmanlığı">Özel Analiz & Çoklu Seans Danışmanlığı</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="clientNote">ÖZEL NOT / TALEBİNİZ (OPSİYONEL)</label>
+            <textarea id="clientNote" rows="3" class="form-textarea" placeholder="Belirtmek istediğiniz hassasiyetler, cilt durumu veya saat tercihi..."></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit-ig">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>INSTAGRAM DM İLE GÖNDER</span>
+            </button>
+            <button type="button" onclick="submitToWhatsApp()" class="btn-submit-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>WHATSAPP İLE GÖNDER</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2>DANIELA MELL</h2>
+          <p>
+            Randevu temelli kişiselleştirilmiş estetik ve çağdaş güzellik stüdyosu. Kusursuz hijyen, birebir özen.
+          </p>
+        </div>
+
+        <div class="footer-columns">
+          <div>
+            <div class="footer-col-title">NAVİGASYON</div>
+            <ul class="footer-nav">
+              <li><a href="#hizmetler">Servisler</a></li>
+              <li><a href="#felsefemiz">Felsefemiz</a></li>
+              <li><a href="#galeri">Çalışmalar</a></li>
+              <li><a href="#randevu">Randevu Al</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">İLETİŞİM / SOSYAL</div>
+            <ul class="footer-nav">
+              <li><a href="https://www.instagram.com/d.mell.e/" target="_blank" rel="noopener noreferrer">Instagram: @d.mell.e</a></li>
+              <li><a href="https://ig.me/m/d.mell.e" target="_blank" rel="noopener noreferrer">Doğrudan DM Hattı</a></li>
+              <li><a href="#randevu">Online Rezervasyon</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> DANIELA MELL. TÜM HAKLARI SAKLIDIR.
+        </div>
+        <div>
+          <a href="https://doeldigital.com" target="_blank" rel="noopener noreferrer" class="doel-badge">
+            <span>DESIGNED BY</span>
+            <strong>DOEL DIGITAL</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Select service from cards
+    function selectService(serviceName) {
+      const select = document.getElementById('serviceSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === serviceName) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById('randevu').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Build booking payload text
+    function getBookingText() {
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const service = document.getElementById('serviceSelect').value;
+      const date = document.getElementById('clientDate').value;
+      const note = document.getElementById('clientNote').value.trim();
+
+      if (!name || !phone || !service) {
+        alert('Lütfen Ad, İletişim Bilgisi ve Hizmet alanlarını doldurunuz.');
+        return null;
+      }
+
+      let text = `Merhaba Daniela Mell Stüdyo,\n\nRandevu talebinde bulunmak istiyorum:\n`;
+      text += `• Danışan: ${name}\n`;
+      text += `• İletişim: ${phone}\n`;
+      text += `• Tercih Edilen Hizmet: ${service}\n`;
+      if (date) text += `• Tercih Edilen Tarih: ${date}\n`;
+      if (note) text += `• Not / Talep: ${note}\n`;
+      text += `\nMüsaitlik durumunuzu öğrenebilir miyim?`;
+
+      return text;
+    }
+
+    // Submit to Instagram DM
+    function submitToInstagram() {
+      const text = getBookingText();
+      if (!text) return;
+
+      // Copy text to clipboard so user can paste inside Instagram DM effortlessly
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Randevu talebiniz kopyalandı! Açılan Instagram DM penceresine doğrudan yapıştırıp gönderebilirsiniz.");
+          window.open('https://ig.me/m/d.mell.e', '_blank');
+        }).catch(() => {
+          window.open('https://ig.me/m/d.mell.e', '_blank');
+        });
+      } else {
+        window.open('https://ig.me/m/d.mell.e', '_blank');
+      }
+    }
+
+    // Submit to WhatsApp
+    function submitToWhatsApp() {
+      const text = getBookingText();
+      if (!text) return;
+
+      const encoded = encodeURIComponent(text);
+      // Opens WhatsApp web/app with pre-filled message
+      window.open(`https://api.whatsapp.com/send?text=${encoded}`, '_blank');
+    }
+  </script>
 </body>
 </html>
