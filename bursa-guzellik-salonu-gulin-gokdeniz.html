@@ -8,26 +8,33 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-limestone: #F9F7F2;
+      --bg-limestone: #FBF9F5;
       --bg-pure: #FFFFFF;
-      --accent-olive: #2B3A2D;
-      --accent-olive-soft: rgba(43, 58, 45, 0.08);
-      --accent-terracotta: #B86B53;
-      --accent-terracotta-soft: rgba(184, 107, 83, 0.12);
-      --powder-beige: #EAE3D9;
-      --text-main: #242924;
-      --text-muted: #5C675E;
-      --border-subtle: rgba(43, 58, 45, 0.1);
+      --bg-surface-card: #FFFFFF;
+      --accent-olive: #1F2C21;
+      --accent-olive-light: #2D3E2F;
+      --accent-olive-soft: rgba(31, 44, 33, 0.06);
+      --accent-terracotta: #AF5C43;
+      --accent-terracotta-dark: #934933;
+      --accent-terracotta-soft: rgba(175, 92, 67, 0.1);
+      --powder-beige: #ECE5DB;
+      --powder-light: #F4EFEA;
+      --text-main: #1C221D;
+      --text-muted: #4B574E;
+      --text-subtle: #6D7970;
+      --border-subtle: rgba(31, 44, 33, 0.12);
+      --border-accent: rgba(175, 92, 67, 0.25);
       --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --arch-radius: 999px 999px 24px 24px;
-      --shadow-warm: 0 16px 36px -12px rgba(43, 58, 45, 0.08);
-      --shadow-soft: 0 8px 24px -6px rgba(43, 58, 45, 0.05);
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --arch-radius: 999px 999px 28px 28px;
+      --shadow-warm: 0 20px 40px -15px rgba(31, 44, 33, 0.08);
+      --shadow-soft: 0 10px 30px -8px rgba(31, 44, 33, 0.06);
+      --shadow-floating: 0 24px 48px -12px rgba(31, 44, 33, 0.16);
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after {
@@ -36,9 +43,17 @@
       padding: 0;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+
     html {
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
@@ -46,10 +61,9 @@
       color: var(--text-main);
       font-family: var(--font-sans);
       font-size: 16px;
-      line-height: 1.65;
-      overflow-x: hidden;
-      background-image: radial-gradient(var(--powder-beige) 1px, transparent 1px);
-      background-size: 28px 28px;
+      line-height: 1.7;
+      background-image: radial-gradient(var(--powder-beige) 1.2px, transparent 1.2px);
+      background-size: 32px 32px;
     }
 
     img {
@@ -71,51 +85,54 @@
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1220px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
     /* Top Utility Bar */
     .top-bar {
       background: var(--accent-olive);
-      color: var(--bg-limestone);
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      padding: 8px 0;
+      color: #F0EAE1;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 9px 0;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
     .top-bar .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 12px;
     }
     .top-bar-item {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .top-bar a:hover {
-      color: var(--accent-terracotta);
+    .top-bar-item svg {
+      stroke: var(--accent-terracotta);
     }
 
     /* Header */
     header {
-      background: rgba(249, 247, 242, 0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(251, 249, 245, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition);
     }
     .nav-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      padding: 16px 0;
     }
     .brand-logo {
       display: flex;
@@ -123,41 +140,43 @@
     }
     .brand-title {
       font-family: var(--font-serif);
-      font-size: 1.65rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
       color: var(--accent-olive);
       line-height: 1.1;
     }
     .brand-subtitle {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       color: var(--accent-terracotta);
-      font-weight: 600;
-      margin-top: 2px;
+      font-weight: 700;
+      margin-top: 3px;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
     .btn-nav-insta {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-size: 0.85rem;
       font-weight: 600;
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 40px;
-      background: var(--powder-beige);
+      background: var(--powder-light);
       color: var(--accent-olive);
-      border: 1px solid transparent;
+      border: 1px solid var(--border-subtle);
     }
     .btn-nav-insta:hover {
       background: var(--bg-pure);
       border-color: var(--accent-terracotta);
+      color: var(--accent-terracotta);
+      transform: translateY(-1px);
     }
     .btn-cta-primary {
       display: inline-flex;
@@ -165,53 +184,63 @@
       justify-content: center;
       gap: 8px;
       background: var(--accent-olive);
-      color: #FFF;
+      color: #FFFFFF;
       font-weight: 600;
       font-size: 0.88rem;
-      padding: 10px 22px;
+      letter-spacing: 0.04em;
+      padding: 11px 24px;
       border-radius: 50px;
       border: 1px solid var(--accent-olive);
-      box-shadow: 0 4px 14px rgba(43, 58, 45, 0.15);
+      box-shadow: 0 4px 16px rgba(31, 44, 33, 0.18);
       cursor: pointer;
     }
     .btn-cta-primary:hover {
       background: var(--accent-terracotta);
       border-color: var(--accent-terracotta);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(175, 92, 67, 0.25);
     }
 
     /* Hero Section */
     .hero {
-      padding: 56px 0 80px;
+      padding: 64px 0 88px;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
+      gap: 52px;
       align-items: center;
     }
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 16px;
+      padding: 7px 18px;
       background: var(--accent-terracotta-soft);
-      border: 1px solid rgba(184, 107, 83, 0.25);
+      border: 1px solid var(--border-accent);
       color: var(--accent-terracotta);
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      border-radius: 30px;
-      margin-bottom: 20px;
+      letter-spacing: 0.16em;
+      border-radius: 40px;
+      margin-bottom: 24px;
+    }
+    .hero-badge-pulse {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-terracotta);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(175, 92, 67, 0.25);
     }
     .hero-title {
       font-family: var(--font-serif);
-      font-size: 3.4rem;
-      line-height: 1.08;
+      font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+      line-height: 1.1;
       font-weight: 600;
       color: var(--accent-olive);
       margin-bottom: 24px;
+      letter-spacing: -0.01em;
     }
     .hero-title span {
       font-style: italic;
@@ -219,66 +248,74 @@
       font-weight: 400;
     }
     .hero-desc {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--text-muted);
-      margin-bottom: 34px;
-      max-width: 520px;
-      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 530px;
+      line-height: 1.75;
+      letter-spacing: -0.005em;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
     .btn-hero-wa {
       background: var(--accent-terracotta);
-      color: #FFF;
-      padding: 14px 32px;
+      color: #FFFFFF;
+      padding: 15px 34px;
       border-radius: 50px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.98rem;
+      letter-spacing: 0.02em;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 10px 24px rgba(184, 107, 83, 0.28);
+      box-shadow: 0 12px 28px rgba(175, 92, 67, 0.28);
     }
     .btn-hero-wa:hover {
       background: var(--accent-olive);
       transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(31, 44, 33, 0.25);
     }
     .btn-hero-secondary {
-      border: 1px solid var(--accent-olive);
+      border: 1.5px solid var(--accent-olive);
       color: var(--accent-olive);
-      padding: 13px 26px;
+      padding: 14px 28px;
       border-radius: 50px;
       font-weight: 600;
       font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      background: transparent;
     }
     .btn-hero-secondary:hover {
       background: var(--powder-beige);
+      transform: translateY(-2px);
     }
 
     .hero-features-bar {
       display: flex;
-      gap: 28px;
+      gap: 36px;
       border-top: 1px solid var(--border-subtle);
-      padding-top: 24px;
+      padding-top: 28px;
     }
     .hero-stat-num {
       font-family: var(--font-serif);
-      font-size: 1.9rem;
+      font-size: 2.1rem;
       font-weight: 700;
       color: var(--accent-olive);
       line-height: 1;
+      letter-spacing: -0.01em;
     }
     .hero-stat-label {
-      font-size: 0.76rem;
-      color: var(--text-muted);
+      font-size: 0.78rem;
+      color: var(--text-subtle);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 4px;
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+      font-weight: 600;
     }
 
     .hero-visual {
@@ -288,12 +325,12 @@
     }
     .arch-frame-main {
       width: 100%;
-      max-width: 400px;
-      height: 520px;
+      max-width: 420px;
+      height: 530px;
       border-radius: var(--arch-radius);
       overflow: hidden;
       box-shadow: var(--shadow-warm);
-      border: 8px solid var(--bg-pure);
+      border: 10px solid #FFFFFF;
       position: relative;
       background: var(--powder-beige);
     }
@@ -301,7 +338,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.8s ease;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .arch-frame-main:hover img {
       transform: scale(1.04);
@@ -309,77 +346,80 @@
 
     .hero-floating-badge {
       position: absolute;
-      bottom: 24px;
-      left: -16px;
-      background: var(--bg-pure);
-      padding: 14px 20px;
-      border-radius: 18px;
-      box-shadow: 0 14px 30px rgba(43, 58, 45, 0.12);
+      bottom: 28px;
+      left: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      padding: 16px 22px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-floating);
       border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
-      gap: 12px;
-      max-width: 250px;
+      gap: 14px;
+      max-width: 270px;
     }
     .floating-dot {
-      width: 10px;
-      height: 10px;
-      background: #34A853;
+      width: 11px;
+      height: 11px;
+      background: #2E9E4F;
       border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(52, 168, 83, 0.2);
+      box-shadow: 0 0 0 5px rgba(46, 158, 79, 0.22);
+      flex-shrink: 0;
     }
     .floating-badge-text {
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.84rem;
+      font-weight: 700;
       color: var(--accent-olive);
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     /* Section Headings */
     .section-header {
       text-align: center;
-      max-width: 680px;
-      margin: 0 auto 52px;
+      max-width: 720px;
+      margin: 0 auto 56px;
     }
     .section-pretitle {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       color: var(--accent-terracotta);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: block;
     }
     .section-title {
       font-family: var(--font-serif);
-      font-size: 2.8rem;
+      font-size: clamp(2.3rem, 3.8vw, 3.1rem);
       font-weight: 600;
       color: var(--accent-olive);
-      line-height: 1.15;
+      line-height: 1.16;
+      letter-spacing: -0.01em;
     }
     .section-desc {
       color: var(--text-muted);
-      font-size: 0.98rem;
-      margin-top: 14px;
-      line-height: 1.6;
+      font-size: 1.02rem;
+      margin-top: 16px;
+      line-height: 1.7;
     }
 
     /* Services Grid */
     .services-section {
-      padding: 80px 0;
+      padding: 92px 0;
       background: var(--bg-pure);
       position: relative;
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
     }
     .service-card {
       background: var(--bg-limestone);
       border: 1px solid var(--border-subtle);
       border-radius: 28px;
-      padding: 32px 28px;
+      padding: 36px 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -387,58 +427,66 @@
       position: relative;
     }
     .service-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-warm);
-      border-color: rgba(184, 107, 83, 0.3);
+      border-color: rgba(175, 92, 67, 0.35);
       background: #FFFFFF;
     }
     .service-meta-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .service-badge {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       color: var(--accent-terracotta);
       background: var(--accent-terracotta-soft);
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 20px;
     }
     .service-duration {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
     }
     .service-icon-wrap {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: var(--powder-beige);
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--powder-light);
+      border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent-olive);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon-wrap {
+      background: var(--accent-terracotta-soft);
+      color: var(--accent-terracotta);
+      border-color: var(--border-accent);
     }
     .service-title {
       font-family: var(--font-serif);
-      font-size: 1.55rem;
+      font-size: 1.65rem;
       color: var(--accent-olive);
       margin-bottom: 12px;
       line-height: 1.25;
       font-weight: 600;
     }
     .service-desc {
-      font-size: 0.9rem;
+      font-size: 0.93rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
-      line-height: 1.6;
+      margin-bottom: 26px;
+      line-height: 1.65;
       flex-grow: 1;
     }
     .service-link {
@@ -446,110 +494,133 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 700;
+      letter-spacing: 0.02em;
       color: var(--accent-olive);
       border-top: 1px solid var(--border-subtle);
-      padding-top: 16px;
+      padding-top: 18px;
+    }
+    .service-link svg {
+      transition: transform 0.3s ease;
     }
     .service-card:hover .service-link {
       color: var(--accent-terracotta);
     }
+    .service-card:hover .service-link svg {
+      transform: translateX(5px);
+    }
 
     /* Philosophy / About */
     .philosophy-section {
-      padding: 96px 0;
+      padding: 104px 0;
     }
     .philosophy-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 68px;
       align-items: center;
     }
     .philosophy-visuals {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 22px;
     }
     .arch-single {
       border-radius: var(--arch-radius);
       overflow: hidden;
       box-shadow: var(--shadow-soft);
-      border: 5px solid var(--bg-pure);
-      height: 380px;
+      border: 6px solid #FFFFFF;
+      height: 400px;
+      background: var(--powder-beige);
     }
     .arch-offset {
-      margin-top: 40px;
-      border-radius: 24px 24px 999px 999px;
+      margin-top: 44px;
+      border-radius: 28px 28px 999px 999px;
     }
     .arch-single img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .arch-single:hover img {
+      transform: scale(1.04);
     }
 
     .philosophy-content {
-      padding-left: 10px;
+      padding-left: 8px;
     }
     .phil-quote {
       font-family: var(--font-serif);
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-style: italic;
-      color: var(--accent-terracotta);
+      color: var(--accent-terracotta-dark);
       border-left: 3px solid var(--accent-terracotta);
-      padding-left: 18px;
-      margin: 24px 0 28px;
-      line-height: 1.5;
+      padding-left: 20px;
+      margin: 26px 0 30px;
+      line-height: 1.55;
     }
     .phil-pillars {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 28px;
+      gap: 18px;
+      margin-top: 32px;
     }
     .pillar-item {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      background: var(--bg-pure);
-      padding: 16px 20px;
-      border-radius: 16px;
+      gap: 16px;
+      background: #FFFFFF;
+      padding: 18px 22px;
+      border-radius: 20px;
       border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(31, 44, 33, 0.03);
     }
-    .pillar-icon {
+    .pillar-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-olive-soft);
       color: var(--accent-olive);
-      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 0.9rem;
       margin-top: 2px;
     }
     .pillar-item h4 {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--accent-olive);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       font-weight: 700;
     }
     .pillar-item p {
-      font-size: 0.82rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     /* Gallery Section */
     .gallery-section {
-      padding: 80px 0;
-      background: var(--bg-pure);
+      padding: 92px 0;
+      background: #FFFFFF;
     }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
     .gallery-item {
       position: relative;
       border-radius: 24px;
       overflow: hidden;
-      height: 380px;
+      height: 390px;
       box-shadow: var(--shadow-soft);
-      border: 4px solid var(--bg-limestone);
+      border: 5px solid var(--bg-limestone);
+      background: var(--powder-beige);
     }
     .gallery-item:nth-child(even) {
       border-radius: var(--arch-radius);
@@ -558,19 +629,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .gallery-item:hover img {
-      transform: scale(1.06);
+      transform: scale(1.08);
     }
     .gallery-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(43, 58, 45, 0.8) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(31, 44, 33, 0.85) 0%, rgba(31, 44, 33, 0.2) 50%, transparent 80%);
       display: flex;
       align-items: flex-end;
-      padding: 20px;
-      color: #FFF;
+      padding: 24px;
+      color: #FFFFFF;
       opacity: 0;
       transition: var(--transition);
     }
@@ -578,37 +649,37 @@
       opacity: 1;
     }
     .gallery-overlay span {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       letter-spacing: 0.04em;
     }
 
     /* Appointment Section */
     .appointment-section {
-      padding: 90px 0;
+      padding: 96px 0;
     }
     .appointment-box {
-      background: var(--bg-pure);
+      background: #FFFFFF;
       border: 1px solid var(--border-subtle);
       border-radius: 36px;
-      padding: 56px 48px;
+      padding: 60px 52px;
       box-shadow: var(--shadow-warm);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 52px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
       position: relative;
       overflow: hidden;
     }
     .appointment-box::before {
       content: '';
       position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 260px;
-      height: 260px;
+      top: -120px;
+      right: -120px;
+      width: 280px;
+      height: 280px;
       background: var(--powder-beige);
       border-radius: 50%;
-      opacity: 0.4;
+      opacity: 0.5;
       pointer-events: none;
     }
     .form-group {
@@ -619,17 +690,17 @@
       font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       color: var(--accent-olive);
       margin-bottom: 8px;
     }
     .form-control {
       width: 100%;
-      padding: 14px 18px;
-      border: 1px solid var(--border-subtle);
+      padding: 15px 18px;
+      border: 1.5px solid var(--border-subtle);
       background: var(--bg-limestone);
-      border-radius: 12px;
-      font-size: 0.95rem;
+      border-radius: 14px;
+      font-size: 0.96rem;
       color: var(--text-main);
       outline: none;
       transition: var(--transition);
@@ -637,32 +708,34 @@
     .form-control:focus {
       border-color: var(--accent-terracotta);
       background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(184, 107, 83, 0.12);
+      box-shadow: 0 0 0 4px rgba(175, 92, 67, 0.12);
     }
     textarea.form-control {
       resize: vertical;
-      min-height: 90px;
+      min-height: 96px;
     }
     .btn-submit-booking {
       width: 100%;
       background: var(--accent-olive);
-      color: #FFF;
+      color: #FFFFFF;
       padding: 16px;
       border: none;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 700;
+      letter-spacing: 0.03em;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       transition: var(--transition);
-      box-shadow: 0 8px 20px rgba(43, 58, 45, 0.15);
+      box-shadow: 0 8px 24px rgba(31, 44, 33, 0.18);
     }
     .btn-submit-booking:hover {
       background: var(--accent-terracotta);
       transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(175, 92, 67, 0.3);
     }
 
     .booking-info {
@@ -672,153 +745,261 @@
     }
     .info-card {
       background: var(--bg-limestone);
-      border-radius: 20px;
-      padding: 24px;
+      border-radius: 24px;
+      padding: 28px;
       margin-top: 24px;
       border: 1px solid var(--border-subtle);
     }
     .info-line {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-      font-size: 0.92rem;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      font-size: 0.94rem;
+      color: var(--text-main);
+      line-height: 1.55;
     }
     .info-line:last-child {
       margin-bottom: 0;
     }
     .info-icon {
       color: var(--accent-terracotta);
-      width: 20px;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Modal / Notification Toast */
+    .toast-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 44, 33, 0.65);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .toast-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .toast-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      max-width: 480px;
+      width: 100%;
+      padding: 36px 32px;
       text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid var(--border-subtle);
+    }
+    .toast-modal.active .toast-card {
+      transform: translateY(0) scale(1);
+    }
+    .toast-icon-wrap {
+      width: 64px;
+      height: 64px;
+      background: var(--accent-terracotta-soft);
+      color: var(--accent-terracotta);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .toast-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--accent-olive);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .toast-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .toast-btn {
+      background: var(--accent-olive);
+      color: #FFFFFF;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .toast-btn:hover {
+      background: var(--accent-terracotta);
     }
 
     /* Footer */
     footer {
-      background: #232E24;
-      color: #D2D8D3;
-      padding: 64px 0 28px;
+      background: #172118;
+      color: #D3DBD4;
+      padding: 72px 0 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1.5fr;
-      gap: 48px;
-      margin-bottom: 48px;
+      gap: 52px;
+      margin-bottom: 56px;
     }
     .footer-brand-title {
       font-family: var(--font-serif);
-      font-size: 1.8rem;
-      color: var(--bg-limestone);
+      font-size: 2rem;
+      color: #FDFBF8;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
     }
     .footer-desc {
-      font-size: 0.88rem;
-      line-height: 1.65;
-      color: #A3AFA5;
-      max-width: 380px;
-      margin-bottom: 20px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #A4B2A6;
+      max-width: 400px;
+      margin-bottom: 22px;
     }
     .footer-heading {
       font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       color: var(--accent-terracotta);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       font-weight: 700;
     }
     .footer-links {
       list-style: none;
     }
     .footer-links li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .footer-links a {
-      color: #C0C8C1;
-      font-size: 0.88rem;
+      color: #BAC5BC;
+      font-size: 0.9rem;
     }
     .footer-links a:hover {
-      color: #FFF;
-      padding-left: 4px;
+      color: #FFFFFF;
+      padding-left: 6px;
     }
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 24px;
+      padding-top: 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-      color: #8C998F;
+      gap: 16px;
+      font-size: 0.84rem;
+      color: #8D9B8F;
+    }
+    
+    /* DOEL DIGITAL Luxury Badge */
+    .doel-signature-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 7px 16px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .doel-signature {
-      font-weight: 600;
-      color: #EAE3D9;
-      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: #F7EFE4;
+      letter-spacing: 0.08em;
+    }
+    .doel-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(175, 92, 67, 0.25);
+      color: #FF9B80;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 20px;
+      border: 1px solid rgba(175, 92, 67, 0.35);
+    }
+    .demo-dot {
+      width: 5px;
+      height: 5px;
+      background: #FF9B80;
+      border-radius: 50%;
     }
 
-    /* Sticky Floating WhatsApp (Mobile First) */
+    /* Sticky Floating WhatsApp */
     .mobile-float-wa {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 26px;
+      right: 26px;
       z-index: 999;
       background: #25D366;
-      color: #FFF;
-      width: 58px;
-      height: 58px;
+      color: #FFFFFF;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.42);
       transition: var(--transition);
     }
     .mobile-float-wa:hover {
-      transform: scale(1.1);
-      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 16px 36px rgba(37, 211, 102, 0.52);
     }
 
-    /* Responsive */
+    /* Responsive Adjustments */
     @media (max-width: 992px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 44px;
       }
       .hero-visual {
         order: -1;
       }
       .arch-frame-main {
-        max-width: 340px;
-        height: 440px;
+        max-width: 360px;
+        height: 460px;
+      }
+      .hero-floating-badge {
+        left: 10px;
+        bottom: 20px;
       }
       .philosophy-grid {
         grid-template-columns: 1fr;
+        gap: 44px;
       }
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .appointment-box {
         grid-template-columns: 1fr;
-        padding: 36px 24px;
+        padding: 40px 28px;
       }
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .hero-title {
-        font-size: 2.8rem;
+        gap: 36px;
       }
     }
 
-    @media (max-width: 600px) {
-      .hero-title {
-        font-size: 2.3rem;
-      }
-      .section-title {
-        font-size: 2.2rem;
-      }
+    @media (max-width: 640px) {
       .top-bar-item:last-child {
         display: none;
       }
@@ -827,15 +1008,22 @@
       }
       .hero-features-bar {
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 20px;
       }
       .gallery-grid {
         grid-template-columns: 1fr;
       }
       .arch-frame-main {
-        width: 100%;
         max-width: 300px;
         height: 390px;
+      }
+      .hero-floating-badge {
+        max-width: 240px;
+        padding: 12px 16px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -846,12 +1034,12 @@
   <aside class="top-bar" aria-label="Hızlı Bilgiler">
     <div class="container">
       <div class="top-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        <span>Odunluk Mah. Kızılay Plaza K:6 D:67 Nilüfer / Bursa</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>Odunluk Mah. Liman Cad. Kızılay Plaza K:6 D:67 Nilüfer / Bursa</span>
       </div>
       <div class="top-bar-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        <span>Pzt - Cmt: 09:30 - 19:30 | Randevu İle</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Pzt - Cmt: 09:30 - 19:30 | Özel Seans Randevulu</span>
       </div>
     </div>
   </aside>
@@ -860,33 +1048,33 @@
   <header>
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">
+        <a href="#" class="brand-logo" aria-label="Gülin Gökdeniz Anasayfa">
           <span class="brand-title">Gülin Gökdeniz</span>
           <span class="brand-subtitle">Güzellik &amp; Bakım Atölyesi</span>
         </a>
 
-        <div class="nav-actions">
-          <a href="https://www.instagram.com/gulingokdeniz.guzellikvebakim/" target="_blank" rel="noopener noreferrer" class="btn-nav-insta" aria-label="Instagram Profili">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <nav class="nav-actions" aria-label="Ana Menü">
+          <a href="https://www.instagram.com/gulingokdeniz.guzellikvebakim/" target="_blank" rel="noopener noreferrer" class="btn-nav-insta" aria-label="Instagram Profili (@gulingokdeniz.guzellikvebakim)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <span>8.020+ Takipçi</span>
           </a>
           <a href="#randevu" class="btn-cta-primary">
             <span>Randevu Al</span>
           </a>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
   <main>
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
           <div class="hero-text-col">
             <div class="hero-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              <span class="hero-badge-pulse"></span>
               Nilüfer'in Prestijli Güzellik Adresi
             </div>
             <h1 class="hero-title">
@@ -896,7 +1084,7 @@
               Bursa Odunluk Kızılay Plaza'daki sakin, steril ve sıcak Akdeniz atmosferimizde; en son teknoloji cihazlar ve kişiselleştirilmiş protokollerle doğal ışıltınızı ortaya çıkarıyoruz.
             </p>
             <div class="hero-actions">
-              <a href="https://wa.me/905325490633?text=Merhaba%2C%20G%C3%BClin%20G%C3%B6kdeniz%20G%C3%BCzellik%20Salonu'ndan%20randevu%20almak%20istiyorum." target="_blank" class="btn-hero-wa">
+              <a href="https://wa.me/905325490633?text=Merhaba%2C%20G%C3%BClin%20G%C3%B6kdeniz%20G%C3%BCzellik%20Salonu'ndan%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-hero-wa" aria-label="WhatsApp Randevu Hattı">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 WhatsApp Hızlı Randevu
               </a>
@@ -921,7 +1109,7 @@
 
           <div class="hero-visual">
             <div class="arch-frame-main">
-              <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/02.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Çalışması">
+              <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/02.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Profesyonel Uygulama" width="420" height="530">
             </div>
             <div class="hero-floating-badge">
               <div class="floating-dot"></div>
@@ -932,7 +1120,7 @@
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services Section -->
     <section class="services-section" id="hizmetler">
       <div class="container">
         <div class="section-header">
@@ -949,13 +1137,13 @@
                 <span class="service-badge">Konforlu &amp; Kalıcı</span>
                 <span class="service-duration">Seans Bazlı</span>
               </div>
-              <div class="service-icon-wrap">
+              <div class="service-icon-wrap" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
               </div>
               <h3 class="service-title">Lazer Epilasyon</h3>
               <p class="service-desc">Yüksek soğutma teknolojisi ile dört mevsim uygulanabilen, pürüzsüz ve acısız profesyonel epilasyon deneyimi.</p>
             </div>
-            <a href="https://wa.me/905325490633?text=Lazer%20Epilasyon%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" class="service-link">
+            <a href="https://wa.me/905325490633?text=Lazer%20Epilasyon%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="service-link" aria-label="Lazer Epilasyon randevusu oluştur">
               <span>Randevu Oluştur</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -968,13 +1156,13 @@
                 <span class="service-badge">Kişiye Özel Analiz</span>
                 <span class="service-duration">60 - 90 Dk</span>
               </div>
-              <div class="service-icon-wrap">
+              <div class="service-icon-wrap" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <h3 class="service-title">Medikal Cilt Bakımı</h3>
-              <p class="service-desc">Gözenek arındırma, derin hidrasyon ve bariyer onarıcı premium dermokozmetik serumlarla cildinize ışıltı kazandırın.</p>
+              <p class="service-desc">Gözenek arındırma, derin hidrasyon ve bariyer onarıcı premium dermokozmetik serumlarla cildinize doğal ışıltı kazandırın.</p>
             </div>
-            <a href="https://wa.me/905325490633?text=Medikal%20Cilt%20Bak%C4%B1m%C4%B1%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" class="service-link">
+            <a href="https://wa.me/905325490633?text=Medikal%20Cilt%20Bak%C4%B1m%C4%B1%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="service-link" aria-label="Medikal Cilt Bakımı randevusu oluştur">
               <span>Randevu Oluştur</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -987,13 +1175,13 @@
                 <span class="service-badge">Doğal Kıvrım</span>
                 <span class="service-duration">50 - 75 Dk</span>
               </div>
-              <div class="service-icon-wrap">
+              <div class="service-icon-wrap" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               </div>
               <h3 class="service-title">Kirpik Lifting &amp; İpek Kirpik</h3>
-              <p class="service-desc">Keratin ve vitamin takviyeli lifting veya tek tek uygulanan hafif ve ipeksi kirpik uzatma tasarımları.</p>
+              <p class="service-desc">Keratin ve vitamin takviyeli lifting veya tek tek uygulanan hafif, ipeksi ve dökülme yapmayan kirpik uzatma tasarımları.</p>
             </div>
-            <a href="https://wa.me/905325490633?text=Kirpik%20Uygulamalar%C4%B1%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" class="service-link">
+            <a href="https://wa.me/905325490633?text=Kirpik%20Uygulamalar%C4%B1%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="service-link" aria-label="Kirpik uygulamaları randevusu oluştur">
               <span>Randevu Oluştur</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -1006,13 +1194,13 @@
                 <span class="service-badge">Yüz Geometrisi</span>
                 <span class="service-duration">45 Dk</span>
               </div>
-              <div class="service-icon-wrap">
+              <div class="service-icon-wrap" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M7 7l5-5 5 5M7 17l5 5 5-5"/></svg>
               </div>
               <h3 class="service-title">Altın Oran Kaş &amp; Laminasyon</h3>
-              <p class="service-desc">Yüz hatlarınıza en uygun simetriyi oluşturan altın oran kaş alımı ve daha dolgun, taranmış bir görünüm sunan laminasyon.</p>
+              <p class="service-desc">Yüz hatlarınıza en uygun simetriyi oluşturan altın oran kaş alımı ve daha dolgun, kusursuz taranmış bir görünüm sunan laminasyon.</p>
             </div>
-            <a href="https://wa.me/905325490633?text=Alt%C4%B1n%20Oran%20Ka%C5%9F%20ve%20Laminasyon%20randevusu%20almak%20istiyorum." target="_blank" class="service-link">
+            <a href="https://wa.me/905325490633?text=Alt%C4%B1n%20Oran%20Ka%C5%9F%20ve%20Laminasyon%20randevusu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="service-link" aria-label="Altın Oran Kaş randevusu oluştur">
               <span>Randevu Oluştur</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -1025,13 +1213,13 @@
                 <span class="service-badge">Sıkılaşma &amp; Drenaj</span>
                 <span class="service-duration">40 Dk / Seans</span>
               </div>
-              <div class="service-icon-wrap">
+              <div class="service-icon-wrap" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 1 0-8 0"/></svg>
               </div>
               <h3 class="service-title">G5 Masajı &amp; Selülit Bakımı</h3>
               <p class="service-desc">Ritmik titreşimli başlıklarla lenf drenajını hızlandıran, selülit görünümünü hafifletip dokuları toparlayan seanslar.</p>
             </div>
-            <a href="https://wa.me/905325490633?text=G5%20Masaj%C4%B1%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" class="service-link">
+            <a href="https://wa.me/905325490633?text=G5%20Masaj%C4%B1%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="service-link" aria-label="G5 Masajı randevusu oluştur">
               <span>Randevu Oluştur</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -1044,13 +1232,13 @@
                 <span class="service-badge">Kusursuz Estetik</span>
                 <span class="service-duration">90 - 120 Dk</span>
               </div>
-              <div class="service-icon-wrap">
+              <div class="service-icon-wrap" aria-hidden="true">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v12a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/></svg>
               </div>
               <h3 class="service-title">Protez Tırnak &amp; Nail Art</h3>
-              <p class="service-desc">Jel sistem kalıcı tırnak güçlendirme, medikal manikür hijyeni ve trend nail art tasarımlarıyla bakımlı eller.</p>
+              <p class="service-desc">Jel sistem kalıcı tırnak güçlendirme, medikal manikür hijyeni ve trend nail art tasarımlarıyla kusursuz bakımlı eller.</p>
             </div>
-            <a href="https://wa.me/905325490633?text=Protez%20T%C4%B1rnak%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" class="service-link">
+            <a href="https://wa.me/905325490633?text=Protez%20T%C4%B1rnak%20hakk%C4%B1nda%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="service-link" aria-label="Protez Tırnak randevusu oluştur">
               <span>Randevu Oluştur</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -1059,16 +1247,16 @@
       </div>
     </section>
 
-    <!-- Philosophy -->
+    <!-- Philosophy Section -->
     <section class="philosophy-section">
       <div class="container">
         <div class="philosophy-grid">
           <div class="philosophy-visuals">
             <div class="arch-single">
-              <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/03.jpg" alt="Gülin Gökdeniz Stüdyo Detay">
+              <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/03.jpg" alt="Gülin Gökdeniz Stüdyo Detay" width="300" height="400">
             </div>
             <div class="arch-single arch-offset">
-              <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/04.jpg" alt="Steril Uygulama Alanı">
+              <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/04.jpg" alt="Steril ve Modern Uygulama Alanı" width="300" height="400">
             </div>
           </div>
 
@@ -1084,24 +1272,24 @@
 
             <div class="phil-pillars">
               <div class="pillar-item">
-                <div class="pillar-icon">✓</div>
+                <div class="pillar-icon-box">✓</div>
                 <div>
                   <h4>Otoklav Seviyesinde Sterilizasyon</h4>
                   <p>Tüm aletlerimiz tek kullanımlık paketler ve medikal dezenfeksiyon standartlarıyla hazırlanır.</p>
                 </div>
               </div>
               <div class="pillar-item">
-                <div class="pillar-icon">✓</div>
+                <div class="pillar-icon-box">✓</div>
                 <div>
                   <h4>Orijinal &amp; Sertifikalı Ürün Garantisi</h4>
                   <p>Cildinize temas eden her ampul, serum ve solüsyon dermatolojik onaylı dünya markalarından seçilir.</p>
                 </div>
               </div>
               <div class="pillar-item">
-                <div class="pillar-icon">✓</div>
+                <div class="pillar-icon-box">✓</div>
                 <div>
                   <h4>Bursa Kızılay Plaza Konforu</h4>
-                  <p>Merkezi konum, otopark kolaylığı ve 6. kattaki ferah atölye ambiyansı.</p>
+                  <p>Merkezi konum, kapalı otopark kolaylığı ve 6. kattaki ferah atölye ambiyansı.</p>
                 </div>
               </div>
             </div>
@@ -1110,7 +1298,7 @@
       </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- Gallery Section -->
     <section class="gallery-section">
       <div class="container">
         <div class="section-header">
@@ -1121,25 +1309,25 @@
 
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/02.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Çalışması">
+            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/02.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Uygulaması" width="300" height="390">
             <div class="gallery-overlay">
               <span>Kişiye Özel Cilt ve Kaş Tasarımı</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/03.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Çalışması">
+            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/03.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Hijyen Standartları" width="300" height="390">
             <div class="gallery-overlay">
               <span>Hassas ve Steril Uygulamalar</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/04.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Çalışması">
+            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/04.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Kirpik Lifting" width="300" height="390">
             <div class="gallery-overlay">
               <span>Doğal Bakışlar &amp; Lifting</span>
             </div>
           </div>
           <div class="gallery-item">
-            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/05.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Çalışması">
+            <img src="img/bursa-guzellik-salonu-gulin-gokdeniz/05.jpg" alt="Bursa Güzellik Salonu Gülin Gökdeniz Ferah Salon" width="300" height="390">
             <div class="gallery-overlay">
               <span>Modern ve Ferah Salon Ambiyansı</span>
             </div>
@@ -1148,28 +1336,28 @@
       </div>
     </section>
 
-    <!-- Appointment Form -->
+    <!-- Appointment Form Section -->
     <section class="appointment-section" id="randevu">
       <div class="container">
         <div class="appointment-box">
           <div>
             <span class="section-pretitle">Ön Talep Formu</span>
-            <h2 class="section-title" style="font-size: 2.2rem;">Randevunuzu Planlayın</h2>
-            <p class="section-desc" style="margin-bottom: 28px;">Bilgilerinizi girin, sistem mesajınızı doğrudan WhatsApp hattımıza randevu taslağı olarak yönlendirsin.</p>
+            <h2 class="section-title" style="font-size: 2.3rem;">Randevunuzu Planlayın</h2>
+            <p class="section-desc" style="margin-bottom: 30px;">Bilgilerinizi girin, sistem mesajınızı doğrudan WhatsApp hattımıza randevu taslağı olarak yönlendirsin.</p>
 
-            <form id="bookingForm" onsubmit="handleBooking(event)">
+            <form id="bookingForm" onsubmit="handleBooking(event)" novalidate>
               <div class="form-group">
-                <label class="form-label" for="clientName">Adınız Soyadınız</label>
-                <input type="text" id="clientName" class="form-control" placeholder="Örn: Ayşe Yılmaz" required>
+                <label class="form-label" for="clientName">Adınız Soyadınız *</label>
+                <input type="text" id="clientName" class="form-control" placeholder="Örn: Ayşe Yılmaz" required autocomplete="name">
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="clientPhone">Telefon Numaranız</label>
-                <input type="tel" id="clientPhone" class="form-control" placeholder="05XX XXX XX XX" required>
+                <label class="form-label" for="clientPhone">Telefon Numaranız *</label>
+                <input type="tel" id="clientPhone" class="form-control" placeholder="05XX XXX XX XX" required autocomplete="tel">
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="clientService">İlgilendiğiniz Hizmet</label>
+                <label class="form-label" for="clientService">İlgilendiğiniz Hizmet *</label>
                 <select id="clientService" class="form-control" required>
                   <option value="">Lütfen Hizmet Seçiniz</option>
                   <option value="Lazer Epilasyon">Lazer Epilasyon</option>
@@ -1177,8 +1365,8 @@
                   <option value="Kirpik Lifting">Kirpik Lifting</option>
                   <option value="İpek Kirpik">İpek Kirpik</option>
                   <option value="Kaş Laminasyon & Altın Oran">Kaş Laminasyon &amp; Altın Oran</option>
-                  <option value="G5 Masajı / İncelme">G5 Masajı &amp; İncelme</option>
-                  <option value="Protez Tırnak">Protez Tırnak &amp; Nail Art</option>
+                  <option value="G5 Masajı / Bölgesel İncelme">G5 Masajı &amp; Bölgesel İncelme</option>
+                  <option value="Protez Tırnak & Nail Art">Protez Tırnak &amp; Nail Art</option>
                 </select>
               </div>
 
@@ -1187,7 +1375,7 @@
                 <textarea id="clientNote" class="form-control" placeholder="Örn: Hafta içi öğleden sonra veya Cumartesi 14:00 uygun olur..."></textarea>
               </div>
 
-              <button type="submit" class="btn-submit-booking">
+              <button type="submit" class="btn-submit-booking" id="submitBtn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 WhatsApp Üzerinden Randevu İlet
               </button>
@@ -1196,15 +1384,15 @@
 
           <div class="booking-info">
             <span class="section-pretitle">Lokasyon &amp; İletişim</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent-olive); margin-bottom: 12px;">Sizi Ağırlamaktan Mutluluk Duyarız</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--accent-olive); margin-bottom: 12px; font-weight: 600;">Sizi Ağırlamaktan Mutluluk Duyarız</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">
               Bursa'nın modern iş ve yaşam merkezi Odunluk Kızılay Plaza'dayız. Randevu saatlerinizde size özel ayrılan zamanda huzurla bakımınızı yaptırabilirsiniz.
             </p>
 
             <div class="info-card">
               <div class="info-line">
                 <span class="info-icon">📍</span>
-                <span><strong>Adres:</strong> Bursa Kızılay Plaza No:17 Odunluk Mah. Liman Cad. Kat:6 Daire:67 Nilüfer / Bursa</span>
+                <span><strong>Adres:</strong> Bursa Kızılay Plaza Sit. No:17 Odunluk Mah. Liman Cad. Kat:6 Daire:67 Nilüfer / Bursa</span>
               </div>
               <div class="info-line">
                 <span class="info-icon">📞</span>
@@ -1216,7 +1404,7 @@
               </div>
               <div class="info-line">
                 <span class="info-icon">☕</span>
-                <span>İkram &amp; Kişisel Cilt Analiz Seansı Dahildir</span>
+                <span>Özel Kahve İkramı &amp; Detaylı Cilt Analiz Seansı Dahildir</span>
               </div>
             </div>
           </div>
@@ -1224,6 +1412,21 @@
       </div>
     </section>
   </main>
+
+  <!-- Notification Modal / Toast -->
+  <div class="toast-modal" id="bookingToast" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="toast-card">
+      <div class="toast-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 class="toast-title" id="modalTitle">Randevu Talebi Hazırlandı</h3>
+      <p class="toast-desc" id="toastDesc">Bilgileriniz hazırlandı. WhatsApp üzerinden Gülin Gökdeniz randevu masasına yönlendiriliyorsunuz.</p>
+      <button type="button" class="toast-btn" onclick="closeToast()">
+        <span>Anlaşıldı &amp; Devam Et</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -1234,7 +1437,7 @@
           <p class="footer-desc">
             Bursa Nilüfer'de kişiye özel güzellik, medikal cilt yenileme, lazer epilasyon ve bakış tasarımı alanında güvenilir ve steril hizmet anlayışı.
           </p>
-          <div style="font-size: 0.85rem; color: #EAE3D9;">
+          <div style="font-size: 0.88rem; color: #EAE3D9;">
             Instagram: <strong>@gulingokdeniz.guzellikvebakim</strong> (8.020+ Takipçi)
           </div>
         </div>
@@ -1244,21 +1447,21 @@
           <ul class="footer-links">
             <li><a href="#hizmetler">Lazer Epilasyon</a></li>
             <li><a href="#hizmetler">Medikal Cilt Bakımı</a></li>
-            <li><a href="#hizmetler">Kirpik Lifting</a></li>
-            <li><a href="#hizmetler">Kaş Laminasyonu</a></li>
-            <li><a href="#hizmetler">G5 Masajı &amp; Selülit</a></li>
-            <li><a href="#hizmetler">Protez Tırnak</a></li>
+            <li><a href="#hizmetler">Kirpik Lifting &amp; İpek Kirpik</a></li>
+            <li><a href="#hizmetler">Kaş Laminasyonu &amp; Altın Oran</a></li>
+            <li><a href="#hizmetler">G5 Masajı &amp; Selülit Bakımı</a></li>
+            <li><a href="#hizmetler">Protez Tırnak &amp; Nail Art</a></li>
           </ul>
         </div>
 
         <div>
           <div class="footer-heading">Salon Konumu</div>
-          <p style="font-size: 0.88rem; line-height: 1.6; color: #A3AFA5; margin-bottom: 12px;">
+          <p style="font-size: 0.9rem; line-height: 1.65; color: #A4B2A6; margin-bottom: 14px;">
             Odunluk Mah. Liman Cad. Bursa Kızılay Plaza Sit. No:17 K:6 D:67 Nilüfer / Bursa
           </p>
-          <p style="font-size: 0.88rem; color: #A3AFA5;">
+          <p style="font-size: 0.9rem; color: #A4B2A6;">
             Doğrudan Randevu Hattı: <br>
-            <strong style="color: #FFF; font-size: 1rem;">+90 532 549 06 33</strong>
+            <strong style="color: #FFFFFF; font-size: 1.05rem;">+90 532 549 06 33</strong>
           </p>
         </div>
       </div>
@@ -1267,38 +1470,92 @@
         <div>
           &copy; <span id="year"></span> Bursa Güzellik Salonu Gülin Gökdeniz. Tüm hakları saklıdır.
         </div>
-        <div>
-          Dijital Tasarım &amp; Altyapı: <span class="doel-signature">DOEL DIGITAL</span>
+        <div class="doel-signature-wrap">
+          <span style="font-size: 0.8rem; color: #9EABA0;">Tasarım ve Teknoloji:</span>
+          <span class="doel-signature">DOEL DIGITAL</span>
+          <span class="doel-demo-badge">
+            <span class="demo-dot"></span>
+            Demo
+          </span>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Floating Mobile WhatsApp CTA -->
-  <a href="https://wa.me/905325490633?text=Merhaba%2C%20web%20sitenizden%20ula%C5%9F%C4%B1yorum.%20Randevu%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" class="mobile-float-wa" aria-label="WhatsApp Canlı Destek" target="_blank">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <a href="https://wa.me/905325490633?text=Merhaba%2C%20web%20sitenizden%20ula%C5%9F%C4%B1yorum.%20Randevu%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim%3F" class="mobile-float-wa" aria-label="WhatsApp Canlı Destek" target="_blank" rel="noopener noreferrer">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
   </a>
 
   <!-- Script -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    let pendingWaUrl = '';
+
     function handleBooking(e) {
       e.preventDefault();
       
-      const name = document.getElementById('clientName').value.trim();
-      const phone = document.getElementById('clientPhone').value.trim();
-      const service = document.getElementById('clientService').value;
-      const note = document.getElementById('clientNote').value.trim();
+      const nameInput = document.getElementById('clientName');
+      const phoneInput = document.getElementById('clientPhone');
+      const serviceInput = document.getElementById('clientService');
+      const noteInput = document.getElementById('clientNote');
+
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const service = serviceInput.value;
+      const note = noteInput.value.trim();
+
+      if (!name) {
+        alert('Lütfen adınızı ve soyadınızı belirtiniz.');
+        nameInput.focus();
+        return;
+      }
+
+      if (!phone || phone.length < 10) {
+        alert('Lütfen geçerli bir telefon numarası giriniz.');
+        phoneInput.focus();
+        return;
+      }
+
+      if (!service) {
+        alert('Lütfen almak istediğiniz hizmeti seçiniz.');
+        serviceInput.focus();
+        return;
+      }
 
       const messageText = `Merhaba Gülin Hanım, siteniz üzerinden randevu talep ediyorum:%0A%0A` +
         `👤 *İsim:* ${encodeURIComponent(name)}%0A` +
         `📞 *Telefon:* ${encodeURIComponent(phone)}%0A` +
         `✨ *İşlem:* ${encodeURIComponent(service)}%0A` +
-        `🗓 *Tarih/Not:* ${encodeURIComponent(note || 'En yakın uygun saat')}`;
+        `🗓 *Tarih/Not:* ${encodeURIComponent(note || 'En yakın müsait saat')}`;
 
-      const waUrl = `https://wa.me/905325490633?text=${messageText}`;
-      window.open(waUrl, '_blank');
+      pendingWaUrl = `https://wa.me/905325490633?text=${messageText}`;
+
+      // Show sleek confirmation toast
+      const toast = document.getElementById('bookingToast');
+      const toastDesc = document.getElementById('toastDesc');
+      toastDesc.textContent = `Sn. ${name}, talebiniz hazırlandı. WhatsApp üzerinden "+90 532 549 06 33" numaralı danışma hattına yönlendiriliyorsunuz.`;
+      toast.classList.add('active');
+
+      // Auto redirect after short delay
+      setTimeout(() => {
+        if (pendingWaUrl) {
+          window.open(pendingWaUrl, '_blank', 'noopener,noreferrer');
+          pendingWaUrl = '';
+          closeToast();
+          e.target.reset();
+        }
+      }, 1400);
+    }
+
+    function closeToast() {
+      const toast = document.getElementById('bookingToast');
+      toast.classList.remove('active');
+      if (pendingWaUrl) {
+        window.open(pendingWaUrl, '_blank', 'noopener,noreferrer');
+        pendingWaUrl = '';
+      }
     }
   </script>
 </body>
